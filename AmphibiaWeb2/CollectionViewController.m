@@ -68,7 +68,7 @@
     {
         cell.title.text = [[data objectAtIndex:indexPath.row] getGenusName];
         
-        imageData = (NSData *)[images objectForKey:[[[data objectAtIndex:indexPath.row] objectAtIndex:0] getName]];
+        imageData = (NSData *)[images objectForKey:[[(NSArray *)[data objectAtIndex:indexPath.row] objectAtIndex:0] getName]];
     }
     else
     {
@@ -81,7 +81,7 @@
     {
         if(genus)
         {
-            [cell.image findImage:[[data objectAtIndex:indexPath.row] objectAtIndex:0]];
+            [cell.image findImage:[(NSArray *)[data objectAtIndex:indexPath.row] objectAtIndex:0]];
         }
         else
         {
@@ -130,11 +130,11 @@
         
         if(loc == NULL)
         {
-            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ matching search criteria (%d)", [[data objectAtIndex:selectedIndex] getGenusName], [[data objectAtIndex:selectedIndex] count]]];
+            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ matching search criteria (%d)", [[data objectAtIndex:selectedIndex] getGenusName], [(NSArray *)[data objectAtIndex:selectedIndex] count]]];
         }
         else
         {
-            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ in %@ (%d)", [[data objectAtIndex:selectedIndex] getGenusName], loc, [[data objectAtIndex:selectedIndex] count]]];
+            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ in %@ (%d)", [[data objectAtIndex:selectedIndex] getGenusName], loc, [(NSArray *)[data objectAtIndex:selectedIndex] count]]];
         }
     }
     else if([[segue identifier] isEqualToString:@"speciesPage"])

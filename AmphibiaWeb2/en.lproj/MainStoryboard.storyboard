@@ -1,9 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PsV-g9-XVg">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="PsV-g9-XVg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment version="1552" defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+            <string>Helvetica-Bold</string>
+        </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="vbA-3y-ejA">
@@ -11,6 +24,7 @@
                 <navigationController definesPresentationContext="YES" id="PsV-g9-XVg" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IRp-fQ-Njs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -21,7 +35,7 @@
             </objects>
             <point key="canvasLocation" x="97" y="161"/>
         </scene>
-        <!--View Controller - AmphibiaWeb Mobile-->
+        <!--AmphibiaWeb Mobile-->
         <scene sceneID="Uc3-Ar-w6e">
             <objects>
                 <viewController id="z2k-S8-UFB" customClass="ViewController" sceneMemberID="viewController">
@@ -30,37 +44,37 @@
                         <viewControllerLayoutGuide type="bottom" id="hEF-bi-SSg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OQx-YE-EVa">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" misplaced="YES" image="amphibiaweb.jpg" highlightedImage="amphibiaweb.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="r05-Bi-Yqe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" ambiguous="YES" misplaced="YES" image="amphibiaweb.jpg" highlightedImage="amphibiaweb.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="r05-Bi-Yqe">
                                 <rect key="frame" x="0.0" y="6" width="320" height="321"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oN1-El-RJ0">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oN1-El-RJ0">
                                 <rect key="frame" x="57" y="371" width="207" height="18"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Find Amphibia In Your Location">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="aCQ-7A-fWY" kind="push" id="iMy-ea-HDy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJS-wd-H0i">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJS-wd-H0i">
                                 <rect key="frame" x="42" y="403" width="237" height="18"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Find Amphibia At Selected Location">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="pBc-xR-TMM" kind="push" id="MXT-dO-Ljq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3v-px-RP2">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3v-px-RP2">
                                 <rect key="frame" x="54" y="435" width="213" height="18"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Search AmphibiaWeb Database">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="do3-uy-Vdo" kind="push" id="8M2-qy-Z3S"/>
@@ -70,7 +84,7 @@
                                 <rect key="frame" x="79" y="467" width="54" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Options">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="QJ3-fD-zqw" kind="push" id="bWw-3D-5It"/>
@@ -80,21 +94,21 @@
                                 <rect key="frame" x="200" y="467" width="41" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="About">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="vX9-c3-Z4r" kind="push" id="pBf-R8-rXv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Total Described Taxa:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-Tx-xdC">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Total Described Taxa:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-Tx-xdC">
                                 <rect key="frame" x="82" y="335" width="157" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="giL-2I-ocK" firstAttribute="leading" secondItem="OQx-YE-EVa" secondAttribute="leading" constant="79" id="0XQ-LR-y5X"/>
                             <constraint firstItem="oN1-El-RJ0" firstAttribute="top" secondItem="J0x-Tx-xdC" secondAttribute="bottom" constant="15" id="Fbe-YJ-Kj9"/>
@@ -127,7 +141,7 @@
             </objects>
             <point key="canvasLocation" x="618" y="161"/>
         </scene>
-        <!--Options - Options-->
+        <!--Options-->
         <scene sceneID="q88-VP-3wv">
             <objects>
                 <viewController id="QJ3-fD-zqw" customClass="Options" sceneMemberID="viewController">
@@ -136,12 +150,11 @@
                         <viewControllerLayoutGuide type="bottom" id="P1J-Vi-12Y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3hB-5N-QCb">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QD3-6M-zNd">
-                                <rect key="frame" x="0.0" y="378" width="320" height="126"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="452.5" width="375" height="150.5"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Map Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qiV-PU-LH0">
                                         <rect key="frame" x="20" y="31" width="77" height="21"/>
@@ -150,7 +163,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9A1-N5-VOS">
-                                        <rect key="frame" x="20" y="67" width="280" height="29"/>
+                                        <rect key="frame" x="20" y="79" width="335" height="29"/>
                                         <segments>
                                             <segment title="Standard"/>
                                             <segment title="Hybrid"/>
@@ -158,7 +171,7 @@
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="qiV-PU-LH0" firstAttribute="leading" secondItem="QD3-6M-zNd" secondAttribute="leading" constant="20" symbolic="YES" id="4SS-OX-1wQ"/>
                                     <constraint firstItem="9A1-N5-VOS" firstAttribute="top" secondItem="qiV-PU-LH0" secondAttribute="bottom" constant="15" id="4rw-dl-2L4"/>
@@ -168,8 +181,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeP-kc-esJ">
-                                <rect key="frame" x="0.0" y="252" width="320" height="126"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="301.5" width="375" height="151"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Species Locality Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="s3u-l9-lVN">
                                         <rect key="frame" x="20" y="30" width="163" height="21"/>
@@ -178,7 +190,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eXg-pj-ftL">
-                                        <rect key="frame" x="20" y="68" width="280" height="29"/>
+                                        <rect key="frame" x="20" y="80.5" width="335" height="29"/>
                                         <segments>
                                             <segment title="Standard"/>
                                             <segment title="Hybrid"/>
@@ -186,7 +198,7 @@
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="eXg-pj-ftL" firstAttribute="top" secondItem="s3u-l9-lVN" secondAttribute="bottom" constant="17" id="Jvh-0M-pBb"/>
                                     <constraint firstAttribute="centerX" secondItem="eXg-pj-ftL" secondAttribute="centerX" id="LPo-ri-ROh"/>
@@ -196,8 +208,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2O-lc-9gA">
-                                <rect key="frame" x="0.0" y="126" width="320" height="126"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="151" width="375" height="150.5"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Ordinal Classification:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bKc-eG-fQs">
                                         <rect key="frame" x="20" y="30" width="157" height="21"/>
@@ -206,7 +217,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WpM-xA-bUF">
-                                        <rect key="frame" x="20" y="68" width="280" height="29"/>
+                                        <rect key="frame" x="20" y="80" width="335" height="29"/>
                                         <segments>
                                             <segment title="Standard"/>
                                             <segment title="Hybrid"/>
@@ -214,7 +225,7 @@
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="WpM-xA-bUF" firstAttribute="leading" secondItem="bKc-eG-fQs" secondAttribute="leading" id="UMA-fd-anX"/>
                                     <constraint firstAttribute="centerY" secondItem="WpM-xA-bUF" secondAttribute="centerY" constant="-19" id="W9b-5n-pAA"/>
@@ -224,8 +235,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl0-AM-a6p">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Browse Amphibians by:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cei-mU-n3m">
                                         <rect key="frame" x="20" y="30" width="174" height="21"/>
@@ -234,7 +244,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="q2E-Hc-Z0b">
-                                        <rect key="frame" x="20" y="68" width="280" height="29"/>
+                                        <rect key="frame" x="20" y="80.5" width="335" height="29"/>
                                         <segments>
                                             <segment title="Standard"/>
                                             <segment title="Hybrid"/>
@@ -242,7 +252,7 @@
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="q2E-Hc-Z0b" secondAttribute="centerY" constant="-19" id="5Zc-AY-bhh"/>
                                     <constraint firstItem="q2E-Hc-Z0b" firstAttribute="top" secondItem="cei-mU-n3m" secondAttribute="bottom" constant="17" id="P6Q-Is-oJO"/>
@@ -253,7 +263,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="QD3-6M-zNd" firstAttribute="top" secondItem="xeP-kc-esJ" secondAttribute="bottom" id="HsV-Ks-Z1o"/>
                             <constraint firstItem="v2O-lc-9gA" firstAttribute="trailing" secondItem="xeP-kc-esJ" secondAttribute="trailing" id="JDM-Va-amF"/>
@@ -282,7 +292,7 @@
             </objects>
             <point key="canvasLocation" x="645" y="924"/>
         </scene>
-        <!--About - About-->
+        <!--About-->
         <scene sceneID="Jao-bs-Chl">
             <objects>
                 <viewController id="vX9-c3-Z4r" customClass="About" sceneMemberID="viewController">
@@ -291,11 +301,11 @@
                         <viewControllerLayoutGuide type="bottom" id="9LE-Wf-MZU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6uS-Dy-qGD">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVu-qJ-P4f">
-                                <rect key="frame" x="20" y="107" width="280" height="353"/>
+                                <rect key="frame" x="20" y="107" width="335" height="452"/>
                                 <string key="text">AmphibiaWeb is an online system that provides access to information on amphibian declines, conservation, natural history, and taxonomy. Administered by a coalition of researchers at UC Berkeley, San Francisco State University, California Academy of Sciences, and University of Texas at Austin, AmphibiaWeb is an ongoing collaboration between citizen scientists, students and researchers around the world. 
 
 Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012.</string>
@@ -321,7 +331,7 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fk0-Od-8bf">
-                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Find out more" width="149" id="kkZ-i7-0lG">
                                         <connections>
@@ -334,10 +344,10 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="tintColor" red="0.0" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aVu-qJ-P4f" firstAttribute="top" secondItem="Z9h-fc-8aZ" secondAttribute="bottom" constant="8" symbolic="YES" id="29Y-e9-4up"/>
                             <constraint firstItem="aVu-qJ-P4f" firstAttribute="centerX" secondItem="Z9h-fc-8aZ" secondAttribute="centerX" id="311-pE-dX8"/>
@@ -366,7 +376,7 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
             </objects>
             <point key="canvasLocation" x="645" y="1574"/>
         </scene>
-        <!--Search - Search Database-->
+        <!--Search Database-->
         <scene sceneID="GT5-Ke-jkh">
             <objects>
                 <viewController id="do3-uy-Vdo" customClass="Search" sceneMemberID="viewController">
@@ -375,11 +385,12 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                         <viewControllerLayoutGuide type="bottom" id="ors-W4-pFq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Bfz-wJ-yTb">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jpD-nG-tDH">
                                 <rect key="frame" x="150" y="93" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
@@ -388,9 +399,10 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7N-NR-QMJ">
                                 <rect key="frame" x="16" y="330" width="150" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Clear Location">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="searchClearLocationButtonPressed:" destination="do3-uy-Vdo" eventType="touchUpInside" id="m1m-Nf-ydn"/>
@@ -398,9 +410,10 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDl-QX-Pc2">
                                 <rect key="frame" x="225" y="448" width="75" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Search">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="do3-uy-Vdo" eventType="touchUpInside" id="Nnu-g6-eD6"/>
@@ -408,27 +421,31 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gPp-pK-YrH">
                                 <rect key="frame" x="173" y="262" width="133" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Common Name:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gMh-Tv-wDj">
                                 <rect key="frame" x="20" y="98" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Scientific Name:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DTX-Qy-b3b">
                                 <rect key="frame" x="20" y="49" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq6-EU-tL7">
                                 <rect key="frame" x="15" y="262" width="150" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Choose Location">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="searchChooseLocationButtonPressed:" destination="do3-uy-Vdo" eventType="touchUpInside" id="FML-6h-wcf"/>
@@ -437,6 +454,7 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="MDv-HT-qwU">
                                 <rect key="frame" x="150" y="142" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
@@ -445,6 +463,7 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="dyw-Tf-BRm">
                                 <rect key="frame" x="150" y="44" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
@@ -453,23 +472,25 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Family:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="OUv-fo-Iek">
                                 <rect key="frame" x="20" y="147" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emE-oE-pQf">
                                 <rect key="frame" x="20" y="448" width="102" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Clear Page">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="clearPageButtonPressed:" destination="do3-uy-Vdo" eventType="touchUpInside" id="xxF-Ya-sGo"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Search Database" id="MkF-2S-EGr"/>
@@ -485,7 +506,7 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
             </objects>
             <point key="canvasLocation" x="1279" y="999"/>
         </scene>
-        <!--Order Selector - Select Order-->
+        <!--Select Order-->
         <scene sceneID="xOy-mK-Wdf">
             <objects>
                 <viewController id="aCQ-7A-fWY" customClass="OrderSelector" sceneMemberID="viewController">
@@ -494,12 +515,11 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                         <viewControllerLayoutGuide type="bottom" id="1Vu-ka-IVi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qjg-gp-quo">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xcm-ho-hGh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="aCQ-7A-fWY" id="lkE-qg-0LB"/>
@@ -507,11 +527,11 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                 </connections>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HM2-eB-ClI">
-                                <rect key="frame" x="142" y="233" width="37" height="37"/>
-                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="169" y="282.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="HM2-eB-ClI" secondAttribute="centerY" constant="0.5" id="1hw-6t-Bc3"/>
                             <constraint firstItem="Xcm-ho-hGh" firstAttribute="trailing" secondItem="qjg-gp-quo" secondAttribute="trailing" id="8lF-yI-4dG"/>
@@ -543,21 +563,23 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                         <viewControllerLayoutGuide type="bottom" id="tbm-E6-6pW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wfn-rY-Q1y">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="chh-FS-ceh">
                                 <rect key="frame" x="141" y="190" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="FQV-pY-vjT">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="myCell" id="h0b-oD-Iwg">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h0b-oD-Iwg" id="GhQ-1F-ErV">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -569,10 +591,11 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VaB-zb-lWF">
                                 <rect key="frame" x="280" y="66" width="37" height="37"/>
-                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="bmA-AQ-7PI">
@@ -598,17 +621,17 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                         <viewControllerLayoutGuide type="bottom" id="hGx-gw-mkY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hhu-ia-Kww">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FQ-zm-ZWx">
-                                <rect key="frame" x="10" y="262" width="301" height="198"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="10" y="311.5" width="356" height="247.5"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description:" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-Vy-21C">
-                                <rect key="frame" x="10" y="234" width="90" height="20"/>
+                                <rect key="frame" x="10" y="283.5" width="90" height="20"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -617,15 +640,15 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                 <rect key="frame" x="281" y="197" width="39" height="40"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" image="sound.gif">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="soundPressed:" destination="9vb-3V-NG1" eventType="touchUpInside" id="JOp-TH-Wz4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Common Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-XP-6fF">
-                                <rect key="frame" x="-1" y="197" width="274" height="29"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="-1" y="246.5" width="329" height="29"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="dX8-Sa-qjW"/>
                                 </constraints>
@@ -634,15 +657,15 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="BIh-el-Qen">
-                                <rect key="frame" x="282" y="199" width="37" height="37"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="337" y="248.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aua-ev-0EY">
-                                <rect key="frame" x="142" y="345" width="37" height="37"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="169.5" y="419.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9Y-FL-Ige">
-                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="View Website" width="149" id="3jd-R1-MwK">
                                         <connections>
@@ -655,16 +678,15 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="tintColor" red="0.0" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAn-ft-DI6" customClass="AmphibianImage">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="247.5"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7FQ-zm-ZWx" firstAttribute="leading" secondItem="c8f-Vy-21C" secondAttribute="leading" id="1Ec-WX-YF7"/>
                             <constraint firstItem="c8f-Vy-21C" firstAttribute="leading" secondItem="Hhu-ia-Kww" secondAttribute="leading" constant="10" id="4lq-Vc-k7Q"/>
@@ -719,18 +741,20 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                         <viewControllerLayoutGuide type="bottom" id="F13-kR-Lym"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2ba-Kj-7ob">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-y2-PqW">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="sGG-3G-yGC" id="2Ny-8D-9FW"/>
                                 </connections>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="98K-RJ-WGx">
                                 <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <barButtonItem enabled="NO" systemItem="rewind" id="KTW-AP-WgQ">
                                         <connections>
@@ -744,10 +768,10 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="tintColor" red="0.0" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Izo-Fn-BsM"/>
@@ -770,23 +794,27 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                         <viewControllerLayoutGuide type="bottom" id="GNd-kz-TnW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="528-d2-2Da">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZhP-fa-VyF">
                                 <rect key="frame" x="142" y="190" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPM-K9-ELn">
                                 <rect key="frame" x="0.0" y="176" width="320" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Map Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="mrN-hG-RHh">
                                         <rect key="frame" x="20" y="91" width="166" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HaA-rX-ozU">
                                         <rect key="frame" x="20" y="130" width="280" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="Standard"/>
                                             <segment title="Hybrid"/>
@@ -798,12 +826,14 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                     </segmentedControl>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Species Locality Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pm7-dR-vOT">
                                         <rect key="frame" x="20" y="9" width="171" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="crZ-3s-KFl">
                                         <rect key="frame" x="20" y="47" width="280" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="Area"/>
                                             <segment title="Both"/>
@@ -815,33 +845,34 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsb-Mg-kza">
                                         <rect key="frame" x="20" y="188" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Close">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="closeOptions:" destination="h65-Pi-IAg" eventType="touchUpInside" id="NrG-z8-XAy"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.51000000000000001" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.51000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="1wn-u4-Y3b">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" id="Qqf-c2-t1F">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="29b-mg-Jdm">
-                                <rect key="frame" x="282" y="11" width="22" height="22"/>
+                                <rect key="frame" x="337" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="openOptions:" destination="h65-Pi-IAg" eventType="touchUpInside" id="2SI-8n-ThB"/>
@@ -861,7 +892,7 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
             </objects>
             <point key="canvasLocation" x="3050" y="-731"/>
         </scene>
-        <!--Location Selector - Select Location-->
+        <!--Select Location-->
         <scene sceneID="2HB-7I-nx3">
             <objects>
                 <viewController id="pBc-xR-TMM" customClass="LocationSelector" sceneMemberID="viewController">
@@ -870,21 +901,22 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                         <viewControllerLayoutGuide type="bottom" id="A9P-rp-xEv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EWu-ct-YVv">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7QI-07-Fyg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="pBc-xR-TMM" id="Ony-t4-NRN"/>
                                 </connections>
                             </mapView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39m-es-EdH" customClass="coordView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z3U-uW-iih">
-                                <rect key="frame" x="20" y="456" width="280" height="29"/>
+                                <rect key="frame" x="20" y="555" width="335" height="29"/>
                                 <segments>
                                     <segment title="Move Map"/>
                                     <segment title="Pick Point"/>
@@ -894,8 +926,8 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="z3U-uW-iih" firstAttribute="leading" secondItem="EWu-ct-YVv" secondAttribute="leading" constant="20" id="2YE-Tk-ieE"/>
                             <constraint firstItem="39m-es-EdH" firstAttribute="bottom" secondItem="EWu-ct-YVv" secondAttribute="bottom" id="4mi-dr-UiI"/>
@@ -919,7 +951,7 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
             </objects>
             <point key="canvasLocation" x="1279" y="338"/>
         </scene>
-        <!--Picture View Controller - Select Genus-->
+        <!--Select Genus-->
         <scene sceneID="e1t-a1-HWN">
             <objects>
                 <viewController id="oHM-Ig-ktZ" customClass="PictureViewController" sceneMemberID="viewController">
@@ -928,24 +960,22 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                         <viewControllerLayoutGuide type="bottom" id="DnG-d4-IiW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="byx-4H-POe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hh-kx-kfB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="zXK-If-f94" kind="embed" identifier="embedSegue" id="AKi-ty-Glo"/>
                                 </connections>
                             </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQE-cF-ClB">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="Njv-cY-rtj">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="t7r-9S-Q9Y">
-                                            <rect key="frame" x="16" y="7" width="308" height="30"/>
+                                            <rect key="frame" x="16" y="7" width="343" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="One"/>
@@ -960,8 +990,8 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kQE-cF-ClB" firstAttribute="bottom" secondItem="4Hh-kx-kfB" secondAttribute="bottom" id="Fty-kS-Unx"/>
                             <constraint firstItem="kQE-cF-ClB" firstAttribute="leading" secondItem="byx-4H-POe" secondAttribute="leading" id="KEh-1W-mbu"/>
@@ -986,10 +1016,10 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="zXK-If-f94" customClass="CollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="ZFG-db-ZZP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="gBd-9L-U08">
                             <size key="itemSize" width="154" height="128"/>
                             <size key="headerReferenceSize" width="50" height="39"/>
@@ -998,7 +1028,7 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AmCell" id="MKq-ey-ZEQ" customClass="AmphibianCollectionCell">
-                                <rect key="frame" x="5" y="103" width="154" height="128"/>
+                                <rect key="frame" x="5" y="39" width="154" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="154" height="128"/>
@@ -1006,7 +1036,6 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="uIZ-Fa-Rel">
                                             <rect key="frame" x="8" y="105" width="138" height="19"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="n5u-bx-xSu"/>
                                             </constraints>
@@ -1016,11 +1045,9 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                         </label>
                                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQl-iG-Qxb" customClass="AmphibianImage">
                                             <rect key="frame" x="8" y="7" width="138" height="94"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="nQl-iG-Qxb" firstAttribute="centerX" secondItem="MKq-ey-ZEQ" secondAttribute="centerX" id="2iF-um-rO4"/>
@@ -1039,12 +1066,11 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="mVZ-DL-eC3" customClass="HeaderCell">
-                            <rect key="frame" x="0.0" y="64" width="320" height="39"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRR-bb-fXl">
                                     <rect key="frame" x="140" y="10" width="40" height="19"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -1078,24 +1104,22 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                         <viewControllerLayoutGuide type="bottom" id="yLd-Tl-3Sf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2CM-9E-zyE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PIi-hH-JjP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="l8d-76-vjc" kind="embed" identifier="embedSegue" id="Myk-Tv-9oU"/>
                                 </connections>
                             </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLw-Vb-V3X">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="M24-1E-lu9">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="0Rj-iT-5B5">
-                                            <rect key="frame" x="16" y="7" width="308" height="30"/>
+                                            <rect key="frame" x="16" y="7" width="343" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="One"/>
@@ -1111,8 +1135,8 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wLw-Vb-V3X" firstAttribute="bottom" secondItem="PIi-hH-JjP" secondAttribute="bottom" id="7XL-fr-3Ia"/>
                             <constraint firstItem="wLw-Vb-V3X" firstAttribute="bottom" secondItem="2CM-9E-zyE" secondAttribute="bottom" id="LBB-iJ-aex"/>
@@ -1139,10 +1163,10 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="l8d-76-vjc" customClass="CollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="yeP-u4-VgF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="MdP-uf-fZv">
                             <size key="itemSize" width="154" height="128"/>
                             <size key="headerReferenceSize" width="50" height="39"/>
@@ -1151,7 +1175,7 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AmCell" id="NmV-CC-Jff" customClass="AmphibianCollectionCell">
-                                <rect key="frame" x="5" y="103" width="154" height="128"/>
+                                <rect key="frame" x="5" y="39" width="154" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="154" height="128"/>
@@ -1159,7 +1183,6 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="FpA-kz-flU">
                                             <rect key="frame" x="55" y="106" width="44" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="aft-NU-fEJ"/>
                                             </constraints>
@@ -1169,11 +1192,9 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhZ-ZZ-r12" customClass="AmphibianImage">
                                             <rect key="frame" x="8" y="7" width="138" height="95"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="FpA-kz-flU" firstAttribute="top" secondItem="fhZ-ZZ-r12" secondAttribute="bottom" constant="4" id="1zO-nF-CuV"/>
@@ -1191,12 +1212,11 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="7Uk-2O-NFl" customClass="HeaderCell">
-                            <rect key="frame" x="0.0" y="64" width="320" height="39"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq8-TL-wed">
                                     <rect key="frame" x="140" y="10" width="40" height="19"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -1226,15 +1246,10 @@ Range maps displayed derive from the IUCN Global Amphibian Assessment, 2010-2012
         <image name="amphibiaweb.jpg" width="311" height="329"/>
         <image name="sound.gif" width="16" height="16"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="MXT-dO-Ljq"/>
-        <segue reference="iMy-ea-HDy"/>
-        <segue reference="Rxo-dZ-ZyE"/>
         <segue reference="fpi-j3-JEx"/>
+        <segue reference="Rxo-dZ-ZyE"/>
+        <segue reference="iMy-ea-HDy"/>
     </inferredMetricsTieBreakers>
 </document>

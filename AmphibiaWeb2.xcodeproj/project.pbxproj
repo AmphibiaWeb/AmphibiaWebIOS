@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -609,7 +609,7 @@
 				ORGANIZATIONNAME = "Mel Roderick";
 				TargetAttributes = {
 					CE3471EE16460084002EE0C4 = {
-						DevelopmentTeam = 6NK6F9GGNF;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.iOS = {
 								enabled = 1;
@@ -619,7 +619,7 @@
 				};
 			};
 			buildConfigurationList = CE3471E916460084002EE0C4 /* Build configuration list for PBXProject "AmphibiaWeb2" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -904,15 +904,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: George Roderick (EL96UU92R3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: George Roderick (EL96UU92R3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Phiri (MQGNG6HKFV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9AMQKU48U7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AmphibiaWeb2/AmphibiaWeb2-Prefix.pch";
 				INFOPLIST_FILE = "AmphibiaWeb2/AmphibiaWeb2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4C2E520D-630C-43A2-BB5D-BF0B07680522";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4C2E520D-630C-43A2-BB5D-BF0B07680522";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -923,15 +926,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: George Roderick (EL96UU92R3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: George Roderick (EL96UU92R3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Phiri (MQGNG6HKFV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9AMQKU48U7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AmphibiaWeb2/AmphibiaWeb2-Prefix.pch";
 				INFOPLIST_FILE = "AmphibiaWeb2/AmphibiaWeb2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4C2E520D-630C-43A2-BB5D-BF0B07680522";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4C2E520D-630C-43A2-BB5D-BF0B07680522";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
