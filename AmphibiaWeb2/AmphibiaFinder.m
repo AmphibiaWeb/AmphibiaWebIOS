@@ -26,15 +26,15 @@
     // start parsing
     if([countrycode isEqualToString:@"US"])
     {
-        url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=us&rel-isocc=like&where-state_code=%@&rel-state_code=like", statecode]];
+        url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=us&rel-isocc=like&where-state_code=%@&rel-state_code=like", statecode]];
     }
     else if([countrycode isEqualToString:@"CA"])
     {
-        url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=ca&rel-isocc=like&where-region=%@&rel-region=like", statecode]];
+        url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=ca&rel-isocc=like&where-region=%@&rel-region=like", statecode]];
     }
     else
     {
-        url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like", countrycode]];
+        url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like", countrycode]];
     }
     
     NSURLRequest *theRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
@@ -87,9 +87,9 @@
     }
     
     // save url
-    url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like&where-scientific_name=%@&where-family=%@&where-ordr=%@&where-common_name=%@",[countryCode stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[scientificName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[familyName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[orderName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[commonName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like&where-scientific_name=%@&where-family=%@&where-ordr=%@&where-common_name=%@",[countryCode stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[scientificName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[familyName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[orderName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[commonName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
-    NSLog(@"%@", [NSString stringWithFormat:@"http://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like&where-scientific_name=%@&where-family=%@&where-ordr=%@&where-common_name=%@",[countryCode stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[scientificName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[familyName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[orderName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[commonName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]);
+    NSLog(@"%@", [NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like&where-scientific_name=%@&where-family=%@&where-ordr=%@&where-common_name=%@",[countryCode stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[scientificName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[familyName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[orderName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[commonName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]);
     
     NSURLRequest *theRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     pointsURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];

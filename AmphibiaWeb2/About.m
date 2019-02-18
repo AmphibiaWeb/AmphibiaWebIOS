@@ -32,7 +32,7 @@
     
     integerFinder *intFin = [[integerFinder alloc] init];
     [intFin setDelegate:self];
-    [intFin getInteger:[NSURL URLWithString:@"http://amphibiaweb.org/lists/counts/anura_total"]];
+    [intFin getInteger:[NSURL URLWithString:@"https://amphibiaweb.org/lists/counts/anura_total"]];
     
     count = 0;
 }
@@ -51,7 +51,7 @@
     }
     else
     {
-        [(WebViewController *)[segue destinationViewController] passUrl:[NSURL URLWithString:@"http://amphibiaweb.org/about/index.html"]];
+        [(WebViewController *)[segue destinationViewController] passUrl:[NSURL URLWithString:@"https://amphibiaweb.org/about/index.html"]];
     }
 }
 
@@ -64,7 +64,7 @@
         
         integerFinder *intFin = [[integerFinder alloc] init];
         [intFin setDelegate:self];
-        [intFin getInteger:[NSURL URLWithString:@"http://amphibiaweb.org/lists/counts/caudata_total"]];
+        [intFin getInteger:[NSURL URLWithString:@"https://amphibiaweb.org/lists/counts/caudata_total"]];
     }
     else if(count == 1)
     {
@@ -73,7 +73,7 @@
         
         integerFinder *intFin = [[integerFinder alloc] init];
         [intFin setDelegate:self];
-        [intFin getInteger:[NSURL URLWithString:@"http://amphibiaweb.org/lists/counts/gymnophiona_total"]];
+        [intFin getInteger:[NSURL URLWithString:@"https://amphibiaweb.org/lists/counts/gymnophiona_total"]];
     }
     else
     {

@@ -16,7 +16,7 @@
 {
     NSArray *twoNames = [species componentsSeparatedByString:@" "]; // split the species name to genus and species
     
-    NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://amphibiaweb.org/cgi/amphib_ws?where-genus=%@&where-species=%@&src=eol",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws?where-genus=%@&where-species=%@&src=eol",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     descriptionURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
     if (descriptionURLConnection) {
         // Create the NSMutableData to hold the received data.

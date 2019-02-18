@@ -152,7 +152,7 @@
     {
         NSArray *twoNames = [[amphibian getName] componentsSeparatedByString:@" "];
         
-        [(WebViewController *)[segue destinationViewController] passUrl:[NSURL URLWithString:[NSString stringWithFormat:@"http://amphibiaweb.org/cgi-bin/amphib_query?query_src=aw_maps_geo-us&table=amphib&special=one_record&where-genus=%@&where-species=%@",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]]];
+        [(WebViewController *)[segue destinationViewController] passUrl:[NSURL URLWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi-bin/amphib_query?query_src=aw_maps_geo-us&table=amphib&special=one_record&where-genus=%@&where-species=%@",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]]];
     }
     else if([segue.identifier isEqualToString:@"toWebImages"])
     {

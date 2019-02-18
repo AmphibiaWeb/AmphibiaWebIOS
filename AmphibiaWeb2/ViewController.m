@@ -21,7 +21,7 @@
     
     integerFinder *intFin = [[integerFinder alloc] init];
     [intFin setDelegate:self];
-    [intFin getInteger:[NSURL URLWithString:@"http://amphibiaweb.org/lists/counts/amphibian_total"]];
+    [intFin getInteger:[NSURL URLWithString:@"https://amphibiaweb.org/lists/counts/amphibian_total"]];
     
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0 green:0.5 blue:0 alpha:1]];
     

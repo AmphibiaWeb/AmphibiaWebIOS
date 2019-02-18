@@ -16,9 +16,9 @@
 {
     NSArray *twoNames = [species componentsSeparatedByString:@" "];
     
-    NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://amphibiaweb.org/cgi/amphib_ws_shapefile?format=kmz&genus=%@&species=%@",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_shapefile?format=kmz&genus=%@&species=%@",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     
-    NSLog(@"%@",[NSString stringWithFormat:@"http://amphibiaweb.org/cgi/amphib_ws_shapefile?format=kmz&genus=%@&species=%@",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]);
+    NSLog(@"%@",[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_shapefile?format=kmz&genus=%@&species=%@",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]);
     
     loading = YES;
     
