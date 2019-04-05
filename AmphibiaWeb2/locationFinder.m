@@ -67,7 +67,15 @@
     }
     
     searching = NO; // make searching is false
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0){
+        [locmanager requestWhenInUseAuthorization];
+    }
+    
     [locmanager startUpdatingLocation]; // start finding user location
+    // Completing this location function
+    // Chenyu March 8 2019
+    [locmanager stopUpdatingHeading];
+
 }
 
 -(void)findLocationGivenPoint:(CLLocationCoordinate2D)point
@@ -81,11 +89,11 @@
              if ([placemarks count] > 0)
              {
                  CLPlacemark *p = [placemarks objectAtIndex:0];
-                 countryCode = p.ISOcountryCode;
+                 self->countryCode = p.ISOcountryCode;
                  ////stateCode = p.administrativeArea;
-                 stateCode = [p.administrativeArea stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-                 region = p.subAdministrativeArea;
-                 countryName = p.country;
+                 self->stateCode = [p.administrativeArea stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+                 self->region = p.subAdministrativeArea;
+                 self->countryName = p.country;
                  
                  [self sendToDelegate];
              }
@@ -127,8 +135,8 @@
         inYourArea = NO; // location is not using your location
         
         
-        NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/xml?latlng=%f,%f&sensor=true",location.latitude,location.longitude]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
-        NSLog(@"%@",[NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/xml?latlng=%f,%f&sensor=true",location.latitude,location.longitude]);
+        NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/geocode/xml?latlng=%f,%f&sensor=true",location.latitude,location.longitude]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+        NSLog(@"%@",[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/geocode/xml?latlng=%f,%f&sensor=true",location.latitude,location.longitude]);
         connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
         if (connection) {
             // Create the NSMutableData to hold the received data.
@@ -158,8 +166,9 @@
     //make sure locmanager doesn't update location again
 }
 
--(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    CLLocation *newLocation = [locations lastObject];
+    
     if(!searching) // make sure locmanager didn't update twice
     {
         searching = YES;
@@ -173,11 +182,11 @@
                  if ([placemarks count] > 0)
                  {
                      CLPlacemark *p = [placemarks objectAtIndex:0];
-                     countryCode = p.ISOcountryCode;
+                     self->countryCode = p.ISOcountryCode;
                      ////stateCode = p.administrativeArea;
-                     stateCode = [p.administrativeArea stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-                     region = p.administrativeArea;
-                     countryName = p.country;
+                     self->stateCode = [p.administrativeArea stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+                     self->region = p.administrativeArea;
+                     self->countryName = p.country;
                      
                      [self sendToDelegate];
                  }
@@ -203,6 +212,53 @@
         }
     }
 }
+
+//// deprecated call should be removed
+//-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+//{
+//    if(!searching) // make sure locmanager didn't update twice
+//    {
+//        searching = YES;
+//
+//        if([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
+//        {
+//            CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+//
+//            [geocoder reverseGeocodeLocation:newLocation completionHandler:
+//             ^(NSArray* placemarks, NSError* error){
+//                 if ([placemarks count] > 0)
+//                 {
+//                     CLPlacemark *p = [placemarks objectAtIndex:0];
+//                     countryCode = p.ISOcountryCode;
+//                     ////stateCode = p.administrativeArea;
+//                     stateCode = [p.administrativeArea stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+//                     region = p.administrativeArea;
+//                     countryName = p.country;
+//
+//                     [self sendToDelegate];
+//                 }
+//             }];
+//        }
+//        else
+//        {
+//            CLLocationCoordinate2D loc = [newLocation coordinate]; // convert CLLocation to CLLocationCoordinate2D
+//
+//            [locmanager stopUpdatingLocation];
+//
+//            NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/xml?latlng=%f,%f&sensor=true",loc.latitude,loc.longitude]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+//            connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+//            if (connection) {
+//                // Create the NSMutableData to hold the received data.
+//                // receivedData is an instance variable declared elsewhere.
+//                locationData = [NSMutableData data];
+//
+//                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+//            } else {
+//                // Inform the user that the connection failed.
+//            }
+//        }
+//    }
+//}
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {

@@ -24,7 +24,8 @@
         
         NSArray *fourNames = [[amphibian getPictureURL] componentsSeparatedByString:@" "]; // seperate image code
         
-        NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://calphotos.berkeley.edu/imgs/128x192/%@_%@/%@/%@.jpeg",[fourNames objectAtIndex:0],[fourNames objectAtIndex:1],[fourNames objectAtIndex:2],[fourNames objectAtIndex:3]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+        // updated cal photo urls Chenyu March 8 2019 
+        NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://calphotos.berkeley.edu/imgs/128x192/%@_%@/%@/%@.jpeg",[fourNames objectAtIndex:0],[fourNames objectAtIndex:1],[fourNames objectAtIndex:2],[fourNames objectAtIndex:3]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
         imageURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
         if (imageURLConnection) {
             // Create the NSMutableData to hold the received data.
@@ -82,12 +83,12 @@
     {
         [UIView animateWithDuration:0.2 animations:^{
             
-            if(activity != NULL)
+            if(self->activity != NULL)
             {
-                [activity setCenter:CGPointMake(self.frame.size.width/2, self.frame.size.height/2)];
+                [self->activity setCenter:CGPointMake(self.frame.size.width/2, self.frame.size.height/2)];
             }
             
-            [image setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+            [self->image setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
             
         } completion:^(BOOL finished) {
             
@@ -109,7 +110,7 @@
             
             [UIView animateWithDuration:0.2 animations:^{
                 
-                [image setAlpha:1];
+                [self->image setAlpha:1];
                 
             } completion:^(BOOL finished) {
                 

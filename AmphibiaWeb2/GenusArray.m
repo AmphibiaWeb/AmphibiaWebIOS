@@ -33,7 +33,7 @@
 }
 -(unsigned int)count
 {
-    return [amphibians count];
+    return (unsigned int)[amphibians count];
 }
 
 -(NSMutableArray *)amphibians

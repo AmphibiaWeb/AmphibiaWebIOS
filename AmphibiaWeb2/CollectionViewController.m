@@ -124,17 +124,17 @@
 {
     if([[segue identifier] isEqualToString:@"nextScroll"])
     {
-        int selectedIndex = [[[self.collectionView indexPathsForSelectedItems] objectAtIndex:0] row];
+        int selectedIndex = (int)[[[self.collectionView indexPathsForSelectedItems] objectAtIndex:0] row];
         
         [(SecondPictureVC *)[segue destinationViewController] passData:[data objectAtIndex:selectedIndex]];
         
         if(loc == NULL)
         {
-            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ matching search criteria (%d)", [[data objectAtIndex:selectedIndex] getGenusName], [(NSArray *)[data objectAtIndex:selectedIndex] count]]];
+            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ matching search criteria (%lu)", [[data objectAtIndex:selectedIndex] getGenusName], (unsigned long)[(NSArray *)[data objectAtIndex:selectedIndex] count]]];
         }
         else
         {
-            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ in %@ (%d)", [[data objectAtIndex:selectedIndex] getGenusName], loc, [(NSArray *)[data objectAtIndex:selectedIndex] count]]];
+            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ in %@ (%lu)", [[data objectAtIndex:selectedIndex] getGenusName], loc, (unsigned long)[(NSArray *)[data objectAtIndex:selectedIndex] count]]];
         }
     }
     else if([[segue identifier] isEqualToString:@"speciesPage"])

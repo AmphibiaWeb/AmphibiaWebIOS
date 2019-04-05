@@ -40,7 +40,7 @@
     
     if([amphibian getSoundURL] != NULL)
     {
-        [soundButton setHidden:NO]; // display soundButton if a soundURL excists
+        [soundButton setHidden:NO]; // display soundButton if a soundURL exists
     }
     else
     {

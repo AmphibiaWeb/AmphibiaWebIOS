@@ -16,6 +16,8 @@
     IBOutlet UILabel *caudataLabel;
     IBOutlet UILabel *gymnophionaLabel;
     
+    IBOutlet UILabel *totalLabel;
+    
     int count;
 }
 

@@ -51,7 +51,7 @@
     [pointType setSelectedSegmentIndex:[[NSUserDefaults standardUserDefaults] integerForKey:@"pointType"]];
     [mapType setSelectedSegmentIndex:[[NSUserDefaults standardUserDefaults] integerForKey:@"mapType"]];
     
-    int type = [[NSUserDefaults standardUserDefaults] integerForKey:@"pointType"];
+    int type = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"pointType"];
     
     kmlFin = [[kmlFinder alloc] init];
     [kmlFin setDelegate:self];
@@ -80,7 +80,7 @@
 
 -(void)setMap
 {
-    int type = [[NSUserDefaults standardUserDefaults] integerForKey:@"mapType"];
+    int type = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"mapType"];
     if(type == 0)
     {
         [map setMapType:MKMapTypeStandard];
@@ -150,7 +150,7 @@
     if(pointType.selectedSegmentIndex == 0)
     {
         NSMutableArray *points = [[NSMutableArray alloc] initWithArray:[map annotations]];
-        for(int i = [points count] - 1 ; i >= 0 ; i--)
+        for(int i = (int)[points count] - 1 ; i >= 0 ; i--)
         {
             if([[points objectAtIndex:i] isKindOfClass:[MKUserLocation class]])
             {

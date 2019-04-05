@@ -32,7 +32,7 @@
     
     [coordSelector setDelegate:self];
     
-    int mapType = [[NSUserDefaults standardUserDefaults] integerForKey:@"mapType"];
+    int mapType = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"mapType"];
     if(mapType == 0)
     {
         [map setMapType:MKMapTypeStandard];

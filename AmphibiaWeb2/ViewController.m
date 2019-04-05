@@ -19,6 +19,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // Insert GIF Logo modified by Chenyu Marh 8 2019
+    FLAnimatedImage *logoimage = [FLAnimatedImage animatedImageWithGIFData: [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"AWlogoanimated300_loop" ofType:@"gif"]]];
+    self.logo.animatedImage = logoimage;
+    [self.view addSubview:self.logo];
+    
+    // end of loading gif
+    
     integerFinder *intFin = [[integerFinder alloc] init];
     [intFin setDelegate:self];
     [intFin getInteger:[NSURL URLWithString:@"https://amphibiaweb.org/lists/counts/amphibian_total"]];

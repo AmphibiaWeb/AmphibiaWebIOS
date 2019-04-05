@@ -43,7 +43,7 @@
 }
 
 - (IBAction)selectorChanged:(id)sender {
-    [collection updateForSize:[self sizeForIndex:selector.selectedSegmentIndex]];
+    [collection updateForSize:(unsigned int)[self sizeForIndex:(unsigned int)selector.selectedSegmentIndex]];
 }
 
 -(void)passData:(NSArray *)data andLocation:(NSString *)location
@@ -57,7 +57,7 @@
         
         int slot = -1;
         
-        for(int n = [genera count] - 1 ; n >= 0 ; n--)
+        for(int n = (unsigned int)[genera count] - 1 ; n >= 0 ; n--)
         {
             if([[[genera objectAtIndex:n] getGenusName] isEqualToString:[names objectAtIndex:0]])
             {
@@ -92,7 +92,7 @@
         return array;
     }
     else {
-        int slot = [array count]/2;
+        int slot = (unsigned int)[array count]/2;
         
         id pivot = [array objectAtIndex:slot];
         [array removeObjectAtIndex:slot];
@@ -100,7 +100,7 @@
         NSMutableArray *less = [[NSMutableArray alloc] init];
         NSMutableArray *greater = [[NSMutableArray alloc] init];
         
-        for(int i = [array count] - 1 ; i >= 0 ; i--)
+        for(int i = (unsigned int)[array count] - 1 ; i >= 0 ; i--)
         {
             if([[[array objectAtIndex:i] getGenusName] compare:[pivot getGenusName]] == NSOrderedDescending)
             {
@@ -134,7 +134,7 @@
     if([[segue identifier] isEqualToString:@"embedSegue"])
     {
         collection = (CollectionViewController *)[segue destinationViewController];
-        [collection passGenera:genera andTitle:title andSize:[self sizeForIndex:selector.selectedSegmentIndex] andLoc:loc];
+        [collection passGenera:genera andTitle:title andSize:[self sizeForIndex:(unsigned int)selector.selectedSegmentIndex] andLoc:loc];
         
         genera = NULL;
     }

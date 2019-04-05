@@ -33,6 +33,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    
     if(usingSearch)
     {
         AmphibiaFinder *ampfin = [[AmphibiaFinder alloc] init];
@@ -58,7 +59,7 @@
         }
     }
     
-    [activity startAnimating];
+     [activity startAnimating];
 }
 
 - (void)didReceiveMemoryWarning
@@ -267,11 +268,11 @@
         
         if(usingSearch)
         {
-            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ with search criteria (%d)", tempName,[anuraData count]]];
+            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ with search criteria (%lu)", tempName,(unsigned long)[anuraData count]]];
         }
         else
         {
-            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ in %@ (%d)", tempName, yourArea, [anuraData count]]];
+            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ in %@ (%lu)", tempName, yourArea, (unsigned long)[anuraData count]]];
         }
     }
     else if((index.row == 0  || index.row == 1) && [caudataData count] > 0)
@@ -295,11 +296,11 @@
         
         if(usingSearch)
         {
-            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ with search criteria (%d)", tempName,[caudataData count]]];
+            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ with search criteria (%lu)", tempName,(unsigned long)[caudataData count]]];
         }
         else
         {
-            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ in %@ (%d)", tempName, yourArea, [caudataData count]]];
+            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ in %@ (%lu)", tempName, yourArea, (unsigned long)[caudataData count]]];
         }
     }
     else
@@ -323,11 +324,11 @@
         
         if(usingSearch)
         {
-            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ with search criteria (%d)", tempName,[gymnophionaData count]]];
+            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ with search criteria (%lu)", tempName,(unsigned long)[gymnophionaData count]]];
         }
         else
         {
-            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ in %@ (%d)", tempName, yourArea, [gymnophionaData count]]];
+            [[segue destinationViewController] passTitle:[NSString stringWithFormat:@"%@ in %@ (%lu)", tempName, yourArea, (unsigned long)[gymnophionaData count]]];
         }
     }
 }

@@ -87,9 +87,11 @@
     }
     
     // save url
-    url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like&where-scientific_name=%@&where-family=%@&where-ordr=%@&where-common_name=%@",[countryCode stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[scientificName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[familyName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[orderName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[commonName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
-    NSLog(@"%@", [NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like&where-scientific_name=%@&where-family=%@&where-ordr=%@&where-common_name=%@",[countryCode stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[scientificName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[familyName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[orderName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[commonName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]);
+    NSCharacterSet *set = [NSCharacterSet URLHostAllowedCharacterSet];
+    url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like&where-scientific_name=%@&where-family=%@&where-ordr=%@&where-common_name=%@",[countryCode stringByAddingPercentEncodingWithAllowedCharacters:set],[scientificName stringByAddingPercentEncodingWithAllowedCharacters:set],[familyName stringByAddingPercentEncodingWithAllowedCharacters:set],[orderName stringByAddingPercentEncodingWithAllowedCharacters:set],[commonName stringByAddingPercentEncodingWithAllowedCharacters:set]]];
+    
+    NSLog(@"%@", [NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like&where-scientific_name=%@&where-family=%@&where-ordr=%@&where-common_name=%@",[countryCode stringByAddingPercentEncodingWithAllowedCharacters:set],[scientificName stringByAddingPercentEncodingWithAllowedCharacters:set],[familyName stringByAddingPercentEncodingWithAllowedCharacters:set],[orderName stringByAddingPercentEncodingWithAllowedCharacters:set],[commonName stringByAddingPercentEncodingWithAllowedCharacters:set]]);
     
     NSURLRequest *theRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     pointsURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];

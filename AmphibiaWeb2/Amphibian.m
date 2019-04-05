@@ -21,7 +21,14 @@
         }
         if(soundURL != NULL)
         {
+            // converting http to https Chenyu March 8 2019
+            if ([soundURL hasPrefix:@"http:"]){
+                soundURL = [soundURL stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"];
             sound = [[NSURL alloc] initWithString:soundURL];
+            
+            }else{
+                sound = [[NSURL alloc] initWithString:soundURL];
+            }
         }
     }
     return self;

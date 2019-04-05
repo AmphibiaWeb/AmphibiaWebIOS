@@ -14,6 +14,8 @@
 
 -(void)getImage:(NSURL *)url
 {
+    // debuggin message for url
+    
     NSURLRequest *theRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     imageURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
     if (imageURLConnection) {

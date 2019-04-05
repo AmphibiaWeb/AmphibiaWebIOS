@@ -42,7 +42,7 @@
 }
 
 - (IBAction)selectorChanged:(id)sender {
-    [collection updateForSize:[self sizeForIndex:selector.selectedSegmentIndex]];
+    [collection updateForSize:(int)[self sizeForIndex:(int)selector.selectedSegmentIndex]];
 }
 
 -(void)passData:(GenusArray *)data
@@ -67,7 +67,7 @@
     if([[segue identifier] isEqualToString:@"embedSegue"])
     {
         collection = (CollectionViewController *)[segue destinationViewController];
-        [collection passSpecies:[species amphibians] andTitle:title andSize:[self sizeForIndex:selector.selectedSegmentIndex]];
+        [collection passSpecies:[species amphibians] andTitle:title andSize:[self sizeForIndex:(unsigned int)selector.selectedSegmentIndex]];
         
         species = NULL;
     }

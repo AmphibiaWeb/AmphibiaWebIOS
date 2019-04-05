@@ -74,7 +74,7 @@
         [cell setImageDisplay:YES];
     }
     [cell setButtonSound:[[amphibianData objectAtIndex:indexPath.row] getSoundURL]];
-    [cell giveSection:0 andRow:indexPath.row];
+    [cell giveSection:0 andRow:(int)indexPath.row];
     
     return cell;
 }
@@ -125,7 +125,7 @@
     // Sound button was pressed
     // load and play
     
-    int row = [table indexPathForCell:sender].row;
+    int row = (int)[table indexPathForCell:sender].row;
     
     if(soundPlayingRow == row) // checks if selected sound was already loaded
     {
