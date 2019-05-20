@@ -16,7 +16,30 @@
 {
     NSArray *twoNames = [species componentsSeparatedByString:@" "]; // split the species name to genus and species
     
+    
+    
     NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws?where-genus=%@&where-species=%@&src=eol",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    
+    
+    
+    dataXml = [NSMutableData data];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionTask *task = [session dataTaskWithRequest:theRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+        if (error){
+            NSLog(@"description not found");
+        }
+        else{
+            [self->dataXml appendData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self->dataXml];
+                [parser setDelegate:self];
+                [parser parse];            });
+
+        }
+    }];
+    [task resume];
+    /*
     descriptionURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
     if (descriptionURLConnection) {
         // Create the NSMutableData to hold the received data.
@@ -27,6 +50,7 @@
     } else {
         // Inform the user that the connection failed.
     }
+    
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -45,8 +69,16 @@
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    
+    alert = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+    [alert addAction:defaultAction];
+    [self.master presentViewController:alert animated:YES completion:nil];
+    
+    // deprecated method
     alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Trouble connecting to internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-    [alert show];
+    [alert show];  */
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 

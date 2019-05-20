@@ -21,6 +21,48 @@
     loading = YES;
     
     NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_specimens?genus=%@&species=%@",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    dataXml = [NSMutableData data];
+    
+    NSURLSessionTask *task = [session dataTaskWithRequest:theRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+        if (error){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+                [alert addAction:defaultAction];
+                [self.master presentViewController:alert animated:YES completion:nil];
+                /*
+                 alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Trouble connecting to internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+                 [alert show];
+                 */
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            });
+        }
+        else{
+            
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+            [self->dataXml appendData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                
+                
+                NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self->dataXml];
+                [parser setDelegate:self];
+                [parser parse];
+                
+                self->loading = NO;
+            });
+            
+        }
+    }];
+    [task resume];
+    
+    /*
     pointsURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
     if (pointsURLConnection) {
         // Create the NSMutableData to hold the received data.
@@ -31,6 +73,7 @@
     } else {
         // Inform the user that the connection failed.
     }
+    */
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -51,8 +94,16 @@
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    
+    alert = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+    [alert addAction:defaultAction];
+    [self.master presentViewController:alert animated:YES completion:nil];
+    
+    /*
     alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Trouble connecting to internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     [alert show];
+     */
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 

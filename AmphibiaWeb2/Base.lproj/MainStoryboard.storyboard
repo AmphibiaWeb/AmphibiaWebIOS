@@ -630,6 +630,9 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                 <state key="normal" image="sound.gif">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="soundPressed:" destination="9vb-3V-NG1" eventType="touchUpInside" id="JOp-TH-Wz4"/>
                                 </connections>
@@ -672,6 +675,14 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="247.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGL-CG-ZS9">
+                                <rect key="frame" x="122" y="278" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View in Browser"/>
+                                <connections>
+                                    <action selector="ToBrowser:" destination="9vb-3V-NG1" eventType="touchUpInside" id="Aq1-yD-yGm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -970,7 +981,7 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="Njv-cY-rtj">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="t7r-9S-Q9Y">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="t7r-9S-Q9Y">
                                             <rect key="frame" x="16" y="7" width="343" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
@@ -1023,7 +1034,7 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                             <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="5"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="AmCell" id="MKq-ey-ZEQ" customClass="AmphibianCollectionCell">
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AmCell" id="MKq-ey-ZEQ" customClass="AmphibianCollectionCell">
                                 <rect key="frame" x="5" y="39" width="154" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1170,7 +1181,7 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                             <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="5"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="AmCell" id="NmV-CC-Jff" customClass="AmphibianCollectionCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AmCell" id="NmV-CC-Jff" customClass="AmphibianCollectionCell">
                                 <rect key="frame" x="5" y="39" width="154" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1187,7 +1198,7 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhZ-ZZ-r12" customClass="AmphibianImage">
-                                            <rect key="frame" x="8" y="7" width="177" height="164"/>
+                                            <rect key="frame" x="8" y="7" width="138" height="95"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                     </subviews>
@@ -1242,9 +1253,9 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
         <image name="sound.gif" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kdm-gk-MUf"/>
+        <segue reference="MXT-dO-Ljq"/>
         <segue reference="fpi-j3-JEx"/>
         <segue reference="Cm1-Sz-ONb"/>
-        <segue reference="g5s-5f-fhh"/>
+        <segue reference="iMy-ea-HDy"/>
     </inferredMetricsTieBreakers>
 </document>

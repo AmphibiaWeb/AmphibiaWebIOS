@@ -22,8 +22,10 @@
     NSMutableData *dataXml;
     NSURLConnection *descriptionURLConnection;
     
-    UIAlertView *alert; // alert displayed when error occurs
+    UIAlertController *alert; // alert displayed when error occurs
 }
+
+@property UIViewController *master;
 @property ( nonatomic) id <descriptionFinderDelegate> delegate;
 -(void)findDescription:(NSString *)species; // start finding description
 -(void)cancelConnection;

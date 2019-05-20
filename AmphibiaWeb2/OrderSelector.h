@@ -17,7 +17,7 @@
     NSArray *caudataData; // stores amphibiaData for order caudata
     NSArray *gymnophionaData; // stores amphibiaData for order gymnophionaData
     
-    UIAlertView *alert; // when an error occures, this view pops up
+    // UIAlertView *alert; // when an error occures, this view pops up
     
     locationFinder *locfin;
     

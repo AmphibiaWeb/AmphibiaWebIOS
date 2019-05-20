@@ -27,6 +27,7 @@
     // end of loading gif
     
     integerFinder *intFin = [[integerFinder alloc] init];
+    intFin->view = self; 
     [intFin setDelegate:self];
     [intFin getInteger:[NSURL URLWithString:@"https://amphibiaweb.org/lists/counts/amphibian_total"]];
     

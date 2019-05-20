@@ -31,6 +31,7 @@
 	// Do any additional setup after loading the view.
     
     integerFinder *intFin = [[integerFinder alloc] init];
+    intFin->view= self;
     [intFin setDelegate:self];
     [intFin getInteger:[NSURL URLWithString:@"https://amphibiaweb.org/lists/counts/anura_total"]];
     
@@ -64,6 +65,7 @@
         [anuraLabel setHidden:NO];
         
         integerFinder *intFin = [[integerFinder alloc] init];
+        intFin->view = self;
         [intFin setDelegate:self];
         [intFin getInteger:[NSURL URLWithString:@"https://amphibiaweb.org/lists/counts/caudata_total"]];
     }
@@ -73,6 +75,7 @@
         [caudataLabel setHidden:NO];
         
         integerFinder *intFin = [[integerFinder alloc] init];
+        intFin->view = self;
         [intFin setDelegate:self];
         [intFin getInteger:[NSURL URLWithString:@"https://amphibiaweb.org/lists/counts/gymnophiona_total"]];
     }
@@ -85,10 +88,13 @@
     count++;
 }
 
+/*
 - (void)viewDidUnload {
     anuraLabel = nil;
     caudataLabel = nil;
     gymnophionaLabel = nil;
     [super viewDidUnload];
 }
+*/
+
 @end

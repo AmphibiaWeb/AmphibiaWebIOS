@@ -37,8 +37,41 @@
         url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like", countrycode]];
     }
     
+    
+    
     NSURLRequest *theRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
-    pointsURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    // switching to URLSession
+    self.session = [NSURLSession sharedSession];
+    dataXml = [NSMutableData data];
+    NSURLSessionTask *task = [self.session dataTaskWithRequest:theRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+        if (error){
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+            [self->view presentViewController:alertController animated:YES completion:nil];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        }
+        else{
+            // dataXml = [NSMutableData data];
+            [self->dataXml appendData:data];
+            self->myparser = [[NSXMLParser alloc] initWithData:self->dataXml];
+            [self->myparser setDelegate:self];
+            [self->myparser parse];
+            // NSLog(@"done parsing");
+        }
+    }];
+    [task resume];
+    /*
+    self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:nil];
+    self.finderTask = [self.session dataTaskWithRequest:theRequest];
+    [self.finderTask resume];
+    if (dataXml){
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    }
+     */
+    
+    /* pointsURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
     if (pointsURLConnection) {
         // Create the NSMutableData to hold the received data.
         // receivedData is an instance variable declared elsewhere.
@@ -48,7 +81,27 @@
     } else {
         // Inform the user that the connection failed.
     }
+     */
 }
+
+/*
+-(void)URLSession:(NSURLSession *)session dataTask:(nonnull NSURLSessionDataTask *)dataTask didReceiveData:(nonnull NSData *)data{
+    NSLog(@"got the data");
+    dataXml = [NSMutableData data];
+
+}
+
+-(void)URLSession:(NSURLSession *)session dataTask:(nonnull NSURLSessionDataTask *)dataTask willCacheResponse:(nonnull NSCachedURLResponse *)proposedResponse completionHandler:(nonnull void (^)(NSCachedURLResponse * _Nullable))completionHandler{
+    
+}
+
+-(void)URLSession:(NSURLSession *)session task:(nonnull NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+    [self->view presentViewController:alertController animated:YES completion:nil];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
@@ -66,10 +119,17 @@
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+ 
     alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Trouble connecting to internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     [alert show];
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+    [self->view presentViewController:alertController animated:YES completion:nil];
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
+*/
 
 -(void)findAmphibiaWithscientificName:(NSString *)scientificName withcommonName:(NSString *)commonName withfamilyName:(NSString *)familyName withorderName:(NSString *)orderName countryCode:(NSString *)countryCode
 {
@@ -94,6 +154,31 @@
     NSLog(@"%@", [NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like&where-scientific_name=%@&where-family=%@&where-ordr=%@&where-common_name=%@",[countryCode stringByAddingPercentEncodingWithAllowedCharacters:set],[scientificName stringByAddingPercentEncodingWithAllowedCharacters:set],[familyName stringByAddingPercentEncodingWithAllowedCharacters:set],[orderName stringByAddingPercentEncodingWithAllowedCharacters:set],[commonName stringByAddingPercentEncodingWithAllowedCharacters:set]]);
     
     NSURLRequest *theRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    
+    dataXml = [NSMutableData data];
+    
+    self.session = [NSURLSession sharedSession];
+    NSURLSessionTask *task = [self.session dataTaskWithRequest:theRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+        if (error){
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+            [self->view presentViewController:alertController animated:YES completion:nil];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        }
+        else{
+            [self->dataXml appendData:data];
+            self->myparser = [[NSXMLParser alloc] initWithData: self->dataXml];
+            [self->myparser setDelegate:self];
+            [self->myparser parse];
+        }
+    }];
+    [task resume];
+    /*
+    self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:nil];
+    self.finderTask = [self.session dataTaskWithRequest:theRequest];
+    [self.finderTask resume];
+    */
+    /*
     pointsURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
     if (pointsURLConnection) {
         // Create the NSMutableData to hold the received data.
@@ -104,6 +189,7 @@
     } else {
         // Inform the user that the connection failed.
     }
+     */
     
     ///[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(startFindingLocation) userInfo:nil repeats:NO]; // timer used for in order to not block thread and use curl up animation
 }
@@ -149,9 +235,15 @@
 
 -(void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError
 {
-    alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Trouble connecting to internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-    [alert show];
+    /* alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Trouble connecting to internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    [alert show]; */
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+    [self->view presentViewController:alertController animated:YES completion:nil];
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
 }
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict

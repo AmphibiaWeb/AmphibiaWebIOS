@@ -37,6 +37,9 @@
     if(usingSearch)
     {
         AmphibiaFinder *ampfin = [[AmphibiaFinder alloc] init];
+        
+        ampfin->view = self;
+        
         [ampfin setDelegate:self];
         
         [ampfin findAmphibiaWithscientificName:name withcommonName:common withfamilyName:family withorderName:@"" countryCode:cCode];
@@ -46,6 +49,8 @@
         locfin = [[locationFinder alloc] init];
         
         [locfin setDelegate:self];
+        
+        locfin.master = self;
         
         if(usingPassedLoc)
         {
@@ -186,8 +191,10 @@
     caudataData = [[NSArray alloc] initWithArray:caudata];
     gymnophionaData = [[NSArray alloc] initWithArray:gymnophiona];
     ///[table scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
-    [table reloadData];
-    [activity stopAnimating];
+    //setting mainthread
+    dispatch_async(dispatch_get_main_queue(), ^{[self->table reloadData];});
+    dispatch_async(dispatch_get_main_queue(), ^{[self->activity stopAnimating];});
+    // [activity stopAnimating];
     
     if([anuraData count] == 0 && [caudataData count] == 0 && [gymnophiona count] == 0) // checks if any amphibia were found; if not, show error message
     {
@@ -209,15 +216,23 @@
             button = @"Back to Menu";
         }
         
+        /*
         alert = [[UIAlertView alloc] initWithTitle:@"No Amphibians Error" message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:button, nil];
         [alert setDelegate:self];
-        [alert show];
+        [alert show];*/
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"No Amphibians Error" message:message preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
     }
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO; // stop showing networkActivityIndicator
+    dispatch_async(dispatch_get_main_queue(), ^{[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;});
+ // stop showing networkActivityIndicator
     
-    [activity stopAnimating];
+    dispatch_async(dispatch_get_main_queue(), ^{[self->activity stopAnimating];});
 }
 
+/*
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex == 1)
@@ -225,6 +240,7 @@
         [[self navigationController] popViewControllerAnimated:YES];
     }
 }
+ */
 
 -(void)passLocation:(CLLocationCoordinate2D)location
 {

@@ -159,6 +159,70 @@
         NSURL *tempURL = [[amphibianData objectAtIndex:row] getSoundURL];
         
         NSURLRequest *theRequest = [NSURLRequest requestWithURL:tempURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+        
+        
+        NSURLSession *session = [NSURLSession sharedSession];
+        soundData = [NSMutableData data];
+        
+        NSURLSessionTask *task = [session dataTaskWithRequest:theRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            if (error){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+                    [alert addAction:defaultAction];
+                    [self.inputViewController presentViewController:alert animated:YES completion:nil];
+                    /*
+                     alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Trouble connecting to internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+                     [alert show];
+                     */
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                });
+            }
+            else{
+                [self->soundData appendData:data];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+                    if (self->soundData) {
+                        // Create the NSMutableData to hold the received data.
+                        // receivedData is an instance variable declared elsewhere.
+                        [self->soundActivity startAnimating];
+                        self->tempCellIndex = [self->table indexPathForCell:sender];
+                        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+                        {
+                            [self->soundActivity setCenter:CGPointMake([(AmphibianCell *)[self->table cellForRowAtIndexPath:self->tempCellIndex] getButtonCenter].x, -[self.view convertPoint:[(AmphibianCell *)[self->table cellForRowAtIndexPath:self->tempCellIndex] getButtonCenter] toView:[self->table cellForRowAtIndexPath:self->tempCellIndex]].y + 83)];
+                        }
+                        else
+                        {
+                            [self->soundActivity setCenter:CGPointMake([(AmphibianCell *)[self->table cellForRowAtIndexPath:self->tempCellIndex] getButtonCenter].x, -[self.view convertPoint:[(AmphibianCell *)[self->table cellForRowAtIndexPath:self->tempCellIndex] getButtonCenter] toView:[self->table cellForRowAtIndexPath:self->tempCellIndex]].y + 42)];
+                        }
+                        
+                        self->recievingSound = YES;
+                        [self->soundData appendData:data];
+
+                        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                        
+                        if (self->recievingSound) {
+                            self->amphibianSound = [[AVAudioPlayer alloc] initWithData:self->soundData error:NULL];
+                            
+                            [self->soundActivity stopAnimating];
+                            
+                            self->recievingSound = NO;
+                            
+                            //play sound
+                            [self->amphibianSound play];
+                        }
+
+                    } else {
+                        // Inform the user that the connection failed.
+                    }
+                });
+            }}];
+        [task resume];
+        
+        
+        /*
+        
         soundURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
         if (soundURLConnection) {
             // Create the NSMutableData to hold the received data.
@@ -182,7 +246,9 @@
         } else {
             // Inform the user that the connection failed.
         }
+         */
     }
+        
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data

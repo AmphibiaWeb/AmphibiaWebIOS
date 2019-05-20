@@ -26,6 +26,34 @@
         
         // updated cal photo urls Chenyu March 8 2019 
         NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://calphotos.berkeley.edu/imgs/128x192/%@_%@/%@/%@.jpeg",[fourNames objectAtIndex:0],[fourNames objectAtIndex:1],[fourNames objectAtIndex:2],[fourNames objectAtIndex:3]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+        
+        imageData = [NSMutableData data];
+        
+        session = [NSURLSession sharedSession];
+        NSURLSessionTask *task = [self->session dataTaskWithRequest:theRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            if (error){
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+                [self.master presentViewController:alertController animated:YES completion:nil];
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            }
+            else{
+                [self->imageData appendData:data];
+                dispatch_async(dispatch_get_main_queue(), ^{[self->image setImage:[UIImage imageWithData:self->imageData]];
+                
+                [self->activity stopAnimating];
+                
+                [self->delegate imageLoaded:self->imageData andID:self->identifier];
+                
+                [self updateSubviews];
+                
+                self->animate = NO;
+                });
+            }
+        }];
+        [task resume];
+        
+        /*
         imageURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
         if (imageURLConnection) {
             // Create the NSMutableData to hold the received data.
@@ -37,6 +65,7 @@
             printf("no internet");
             // Inform the user that the connection failed.
         }
+        */
         
         activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [activity setCenter:CGPointMake(self.frame.size.width/2, self.frame.size.height/2)];
@@ -150,11 +179,12 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
+/*
 -(void)cancelConnection
 {
     [imageURLConnection cancel];
 }
-
+*/
 -(void)layoutSubviews
 {
     [super layoutSubviews];

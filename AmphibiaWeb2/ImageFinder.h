@@ -20,8 +20,9 @@
     NSMutableData *imageData;
     NSURLConnection *imageURLConnection;
     
-    UIAlertView *alert; // alert displayed when error occurs
+    UIAlertController *alert; // alert displayed when error occurs
 }
+@property UIViewController *master;
 @property ( nonatomic) id <imageFinderDelegate> delegate;
 -(void)getImage:(NSURL *)url;
 -(void)cancelConnection;

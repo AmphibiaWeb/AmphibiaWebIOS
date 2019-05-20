@@ -137,7 +137,48 @@
         
         NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/geocode/xml?latlng=%f,%f&sensor=true",location.latitude,location.longitude]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
         NSLog(@"%@",[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/geocode/xml?latlng=%f,%f&sensor=true",location.latitude,location.longitude]);
-        connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+        
+        // connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+        
+        
+        NSURLSession *session = [NSURLSession sharedSession];
+        
+        locationData = [NSMutableData data];
+        
+        NSURLSessionTask *task = [session dataTaskWithRequest:theRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            if (error){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+                    [alert addAction:defaultAction];
+                    [self.master presentViewController:alert animated:YES completion:nil];
+                    /*
+                     alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Trouble connecting to internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+                     [alert show];
+                     */
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                });
+            }
+            else{
+                
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+                [self->locationData appendData:data];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self->locationData];
+                    [parser setDelegate:self];
+                    [parser parse];
+                    
+
+                });
+                
+            }
+        }];
+        [task resume];
+        
+        /*
         if (connection) {
             // Create the NSMutableData to hold the received data.
             // receivedData is an instance variable declared elsewhere.
@@ -147,6 +188,7 @@
         } else {
             // Inform the user that the connection failed.
         }
+         */
     }
 }
 
@@ -199,6 +241,46 @@
             [locmanager stopUpdatingLocation];
             
             NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/xml?latlng=%f,%f&sensor=true",loc.latitude,loc.longitude]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+            
+            NSURLSession *session = [NSURLSession sharedSession];
+            
+            locationData = [NSMutableData data];
+            
+            NSURLSessionTask *task = [session dataTaskWithRequest:theRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+                if (error){
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Connection Error" message:@"Trouble connecting to internet" preferredStyle:UIAlertControllerStyleAlert];
+                        UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+                        [alert addAction:defaultAction];
+                        [self.master presentViewController:alert animated:YES completion:nil];
+                        /*
+                         alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Trouble connecting to internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+                         [alert show];
+                         */
+                        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                    });
+                }
+                else{
+                    
+                    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+                    [self->locationData appendData:data];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                        
+                        
+                        NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self->locationData];
+                        [parser setDelegate:self];
+                        [parser parse];
+                        
+                    });
+                    
+                }
+            }];
+            [task resume];
+            
+            /*
             connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
             if (connection) {
                 // Create the NSMutableData to hold the received data.
@@ -209,6 +291,7 @@
             } else {
                 // Inform the user that the connection failed.
             }
+             */
         }
     }
 }
@@ -264,8 +347,17 @@
 {
     //initialize location error
     [locmanager stopUpdatingLocation];
+    
+    alert = [UIAlertController alertControllerWithTitle:@"Location Error" message:@"Trouble finding your location, try again later" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+    [alert addAction:defaultAction];
+    [self.master presentViewController:alert animated:YES completion:nil];
+    
+    /*
     alert = [[UIAlertView alloc] initWithTitle:@"Location Error" message:@"Trouble finding your location" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Try Again", nil];
     [alert show];
+     */
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
@@ -274,6 +366,7 @@
     //initialise conncection error
 }
 
+/*
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     //try again was pressed
@@ -297,6 +390,7 @@
         }
     }
 }
+*/
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {

@@ -20,8 +20,9 @@
     NSURLConnection *kmlURLConnection;
     
     BOOL loading;
-    
-    UIAlertView *alert; // alert displayed when error occurs
+    @public
+    UIViewController *view; 
+    // UIAlertView *alert; // alert displayed when error occurs
 }
 @property ( nonatomic) id <kmlFinderDelegate> delegate;
 -(void)findKml:(NSString *)species; // tells self to start finding points given species

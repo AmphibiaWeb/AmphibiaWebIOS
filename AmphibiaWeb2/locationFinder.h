@@ -21,7 +21,7 @@
     
     CLLocationCoordinate2D location; // given location
     
-    UIAlertView *alert; // alert displayed when error occurs
+    UIAlertController *alert; // alert displayed when error occurs
     
     // data used for  parsing Google xml geocoder
     BOOL isLongName;
@@ -42,6 +42,7 @@
     NSMutableData *locationData;
     NSURLConnection *connection;
 }
+@property UIViewController *master; 
 @property ( nonatomic) id <locationFinderDelegate> delegate;
 -(void)findLocation; // find user location
 -(void)findLocationGivenPoint:(CLLocationCoordinate2D)point; // find location information of point

@@ -18,7 +18,7 @@
 @interface AmphibianImage : UIView<NSURLConnectionDataDelegate>
 {
     NSMutableData *imageData;
-    NSURLConnection *imageURLConnection;
+    NSURLSession *session;
     
     UIActivityIndicatorView *activity;
     UIImageView *image;
@@ -30,6 +30,7 @@
     BOOL animate;
 }
 
+@property UIViewController * master; 
 @property (nonatomic) id <AmphibianImageDelegate> delegate;
 
 -(void)findImage:(Amphibian *)amphibian;

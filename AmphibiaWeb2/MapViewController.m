@@ -55,8 +55,10 @@
     
     kmlFin = [[kmlFinder alloc] init];
     [kmlFin setDelegate:self];
+    kmlFin->view = self;
     pntFin = [[pointFinder alloc] init];
     [pntFin setDelegate:self];
+    pntFin.master = self; 
     
     if(type != 2)
     {
@@ -369,7 +371,11 @@
     return [kml viewForAnnotation:annotation];
 }
 
+
+/*
 - (void)viewDidUnload {
     [super viewDidUnload];
 }
+ */
+
 @end

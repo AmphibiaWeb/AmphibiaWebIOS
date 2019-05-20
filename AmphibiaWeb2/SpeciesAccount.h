@@ -34,6 +34,9 @@
 
 -(void)passAmphibian:(Amphibian *)amp andImage:(UIImage *)im;
 
+- (IBAction)ToBrowser:(id)sender;
+
 - (IBAction)soundPressed:(id)sender;
+
 
 @end

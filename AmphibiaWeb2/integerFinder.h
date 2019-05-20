@@ -19,7 +19,10 @@
     
     NSMutableData *integerData;
     
-    UIAlertView *alert; // alert displayed when error occurs
+    @public
+    UIViewController *view;
+    
+    // UIAlertView *alert; // alert displayed when error occurs
 }
 @property ( nonatomic) id <integerFinderDelegate> delegate;
 -(void)getInteger:(NSURL *)url;

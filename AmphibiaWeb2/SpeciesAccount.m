@@ -22,6 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        imageView.master = self; 
     }
     return self;
 }
@@ -35,6 +36,8 @@
     
     DescriptionFinder *descFin = [[DescriptionFinder alloc] init];
     [descFin setDelegate:self];
+    descFin.master = self;
+    
     [descFin findDescription:[amphibian getName]]; // start finding description
     [descriptionActivity startAnimating];
     
@@ -72,6 +75,14 @@
     image = im;
 }
 
+- (IBAction)ToBrowser:(id)sender {
+    NSArray *twoNames = [[amphibian getName] componentsSeparatedByString:@" "];
+    
+ NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi-bin/amphib_query?query_src=aw_maps_geo-us&table=amphib&special=one_record&where-genus=%@&where-species=%@",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]];
+    
+    [[UIApplication sharedApplication] openURL: url options:@{} completionHandler:nil];
+}
+
 - (IBAction)soundPressed:(id)sender {
     // Sound button was pressed
     // load and play
@@ -95,8 +106,41 @@
     {
         // load sound
         NSURL *tempURL = [amphibian getSoundURL];
-        
+        soundData = [NSMutableData data];
         NSURLRequest *theRequest = [NSURLRequest requestWithURL:tempURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+        
+        NSURLSession * session = [NSURLSession sharedSession];
+        NSURLSessionTask *task = [session dataTaskWithRequest:theRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            if (error){
+                NSLog(@"Sound file not loaded");
+            }
+            else{
+                [self->soundData appendData:data];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self->soundActivity startAnimating];
+                    
+                    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+                    
+                    self->recievingSound = YES;
+                    
+                    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                    
+                    if (self->recievingSound) {
+                        self->amphibianSound = [[AVAudioPlayer alloc] initWithData:self->soundData error:NULL];
+                        
+                        [self->soundActivity stopAnimating];
+                        
+                        self->recievingSound = NO;
+                        
+                        //play sound
+                        [self->amphibianSound play];
+                    }
+                });
+            }
+        }];
+        [task resume];
+        
+        /*
         soundURLConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
         if (soundURLConnection) {
             // Create the NSMutableData to hold the received data.
@@ -111,6 +155,7 @@
         } else {
             // Inform the user that the connection failed.
         }
+         */
     }
 }
 

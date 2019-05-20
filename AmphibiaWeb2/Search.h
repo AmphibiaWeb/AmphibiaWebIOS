@@ -18,7 +18,7 @@
     IBOutlet UILabel *searchLocationLabel;
     NSString *countryCode;
     
-    UIAlertView *alert;
+    // UIAlertView *alert;
 }
 
 - (IBAction)scientificNameChanged:(id)sender;

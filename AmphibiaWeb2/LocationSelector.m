@@ -69,7 +69,7 @@
     if(locChosen)
     {
         MKPinAnnotationView *newAnnotation = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation1"];
-        newAnnotation.pinColor = MKPinAnnotationColorPurple;
+        newAnnotation.pinTintColor = [MKPinAnnotationView purplePinColor];
         newAnnotation.animatesDrop = YES;
         newAnnotation.canShowCallout = NO;
         [newAnnotation setSelected:YES animated:YES];

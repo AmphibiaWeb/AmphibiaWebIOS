@@ -34,8 +34,10 @@
     
     BOOL loading;
     
-    UIAlertView *alert; // alert displayed when error occurs
+    UIAlertController *alert; // alert displayed when error occurs
 }
+@property UIViewController * master;
+
 @property ( nonatomic) id <pointFinderDelegate> delegate;
 -(void)findPoints:(NSString *)species; // tells self to start finding points given species
 -(void)cancelConnection;
