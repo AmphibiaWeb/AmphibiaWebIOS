@@ -135,30 +135,30 @@
 	if (!self.cachedData || ([self.cachedData length] < ZKCDHeaderFixedDataLength)) {
 		self.extraField = [self zip64ExtraField];
 
-		self.cachedData = [NSMutableData zk_dataWithLittleInt32:self.magicNumber];
+		self.cachedData = [NSMutableData zk_dataWithLittleInt32:(unsigned int)self.magicNumber];
 		[self.cachedData zk_appendLittleInt16:self.versionMadeBy];
 		[self.cachedData zk_appendLittleInt16:self.versionNeededToExtract];
 		[self.cachedData zk_appendLittleInt16:self.generalPurposeBitFlag];
 		[self.cachedData zk_appendLittleInt16:self.compressionMethod];
-		[self.cachedData zk_appendLittleInt32:[self.lastModDate zk_dosDate]];
-		[self.cachedData zk_appendLittleInt32:self.crc];
+		[self.cachedData zk_appendLittleInt32:(unsigned int)[self.lastModDate zk_dosDate]];
+		[self.cachedData zk_appendLittleInt32:(unsigned int)self.crc];
 		if ([self useZip64Extensions]) {
 			[self.cachedData zk_appendLittleInt32:0xFFFFFFFF];
 			[self.cachedData zk_appendLittleInt32:0xFFFFFFFF];
 		} else {
-			[self.cachedData zk_appendLittleInt32:self.compressedSize];
-			[self.cachedData zk_appendLittleInt32:self.uncompressedSize];
+			[self.cachedData zk_appendLittleInt32:(unsigned int)self.compressedSize];
+			[self.cachedData zk_appendLittleInt32:(unsigned int)self.uncompressedSize];
 		}
 		[self.cachedData zk_appendLittleInt16:[self.filename zk_precomposedUTF8Length]];
 		[self.cachedData zk_appendLittleInt16:[self.extraField length]];
 		[self.cachedData zk_appendLittleInt16:[self.comment zk_precomposedUTF8Length]];
 		[self.cachedData zk_appendLittleInt16:self.diskNumberStart];
 		[self.cachedData zk_appendLittleInt16:self.internalFileAttributes];
-		[self.cachedData zk_appendLittleInt32:self.externalFileAttributes];
+		[self.cachedData zk_appendLittleInt32:(unsigned int)self.externalFileAttributes];
 		if ([self useZip64Extensions])
 			[self.cachedData zk_appendLittleInt32:0xFFFFFFFF];
 		else
-			[self.cachedData zk_appendLittleInt32:self.localHeaderOffset];
+			[self.cachedData zk_appendLittleInt32:(unsigned int)self.localHeaderOffset];
 		[self.cachedData zk_appendPrecomposedUTF8String:self.filename];
 		[self.cachedData appendData:self.extraField];
 		[self.cachedData zk_appendPrecomposedUTF8String:self.comment];

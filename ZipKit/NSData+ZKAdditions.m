@@ -68,7 +68,7 @@
 }
 
 - (NSUInteger) zk_crc32:(NSUInteger)crc {
-	return crc32(crc, [self bytes], [self length]);
+	return crc32(crc, [self bytes],  (unsigned int)[self length]);
 }
 
 - (NSData *) zk_inflate {
@@ -82,7 +82,7 @@
 	z_stream strm;
 
 	strm.next_in = (Bytef *)[self bytes];
-	strm.avail_in = [self length];
+	strm.avail_in = (unsigned int)[self length];
 	strm.total_out = 0;
 	strm.zalloc = Z_NULL;
 	strm.zfree = Z_NULL;
@@ -92,7 +92,7 @@
 		if (strm.total_out >= [inflatedData length])
 			[inflatedData increaseLengthBy:half_length];
 		strm.next_out = [inflatedData mutableBytes] + strm.total_out;
-		strm.avail_out = [inflatedData length] - strm.total_out;
+		strm.avail_out = (unsigned int)([inflatedData length] - strm.total_out);
 		status = inflate(&strm, Z_SYNC_FLUSH);
 		if (status == Z_STREAM_END) done = YES;
 		else if (status != Z_OK) break;
@@ -112,7 +112,7 @@
 	strm.opaque = Z_NULL;
 	strm.total_out = 0;
 	strm.next_in = (Bytef *)[self bytes];
-	strm.avail_in = [self length];
+	strm.avail_in = (unsigned int)[self length];
 
 	NSMutableData *deflatedData = [NSMutableData dataWithLength:16384];
 	if (deflateInit2(&strm, Z_BEST_COMPRESSION, Z_DEFLATED, -MAX_WBITS, 8, Z_DEFAULT_STRATEGY) != Z_OK) return nil;
@@ -120,7 +120,7 @@
 		if (strm.total_out >= [deflatedData length])
 			[deflatedData increaseLengthBy:16384];
 		strm.next_out = [deflatedData mutableBytes] + strm.total_out;
-		strm.avail_out = [deflatedData length] - strm.total_out;
+		strm.avail_out = (unsigned int)([deflatedData length] - strm.total_out);
 		deflate(&strm, Z_FINISH);
 	} while (strm.avail_out == 0);
 	deflateEnd(&strm);

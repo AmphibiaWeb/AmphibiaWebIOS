@@ -132,7 +132,9 @@
 - (void)beginOutline;
 - (void)endOutline;
 
-- (void)applyToOverlayPathView:(MKOverlayPathView *)view;
+// - (void)applyToOverlayPathView:(MKOverlayPathView *)view;
+
+-(void)applyToOverlayPathViewRenderer:(MKOverlayPathRenderer *) viewrenderer;
 
 @end
 
@@ -151,7 +153,9 @@
 
 // Create (if necessary) and return the corresponding MKOverlayPathView for
 // the MKShape object.
-- (MKOverlayPathView *)createOverlayView:(MKShape *)shape;
+// - (MKOverlayPathView *)createOverlayView:(MKShape *)shape;
+
+- (MKOverlayPathRenderer *)createOverlayViewRenderer:(MKShape *)shape;
 
 @end
 
@@ -209,7 +213,10 @@
     MKShape *mkShape;
     
     MKAnnotationView *annotationView;
-    MKOverlayPathView *overlayView;
+    // MKOverlayPathView *overlayView;
+    //added later
+    
+    MKOverlayPathRenderer *overlayrenderer;
     
     struct {
         int inName:1;
@@ -249,7 +256,11 @@
 - (id <MKOverlay>)overlay;
 - (id <MKAnnotation>)point;
 
-- (MKOverlayView *)overlayView;
+// - (MKOverlayView *)overlayView;
+
+//added later
+- (MKOverlayRenderer *) overlayrenderer;
+
 - (MKAnnotationView *)annotationView;
 
 @end
@@ -324,6 +335,20 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     return self;
 }
 
+- (id)initWithData:(NSData *)data{
+    
+    if (self = [super init]) {
+        _styles = [[NSMutableDictionary alloc] init];
+        _placemarks = [[NSMutableArray alloc] init];
+        
+        _xmlParser = [[NSXMLParser alloc] initWithData: data];
+        
+        [_xmlParser setDelegate:self];
+    }
+    return self;
+    
+}
+
 
 - (void)parseKML
 {
@@ -368,6 +393,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     return nil;
 }
 
+/*
 - (MKOverlayView *)viewForOverlay:(id <MKOverlay>)overlay
 {
     // Find the KMLPlacemark object that owns this overlay and get
@@ -378,6 +404,20 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     }
     return nil;
 }
+*/
+- (MKOverlayRenderer *)rendererForOverlay:(id <MKOverlay>)overlay{
+    
+    for (KMLPlacemark *placemark in _placemarks) {
+        if ([placemark overlay] == overlay){
+            
+            MKOverlayRenderer *overlayRenderer = [placemark overlayrenderer];
+                        
+            return overlayRenderer;
+        }
+    }
+    return nil;
+}
+
 
 #pragma mark NSXMLParserDelegate
 
@@ -616,13 +656,20 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     [self clearString];
 }
 
+/*
 - (void)applyToOverlayPathView:(MKOverlayPathView *)view
 {
     view.strokeColor = strokeColor;
     view.fillColor = fillColor;
     view.lineWidth = strokeWidth;
 }
+*/
 
+-(void)applyToOverlayPathViewRenderer:(MKOverlayPathRenderer *) viewrenderer{
+    viewrenderer.strokeColor = strokeColor;
+    viewrenderer.fillColor = fillColor;
+    viewrenderer.lineWidth = strokeWidth;
+}
 @end
 
 @implementation KMLGeometry
@@ -646,9 +693,13 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
 {
     return nil;
 }
-
+/*
 - (MKOverlayPathView *)createOverlayView:(MKShape *)shape
 {
+    return nil;
+}
+*/
+- (MKOverlayPathRenderer *)createOverlayViewRenderer:(MKShape *)shape{
     return nil;
 }
 
@@ -762,7 +813,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     free(coords);
     return poly;
 }
-
+/*
 - (MKOverlayPathView *)createOverlayView:(MKShape *)shape
 {
     // KMLPolygon corresponds to MKPolygonView
@@ -770,6 +821,17 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     MKPolygonView *polyView = [[MKPolygonView alloc] initWithPolygon:(MKPolygon *)shape];
     return polyView;
 }
+*/
+
+- (MKOverlayPathRenderer *)createOverlayViewRenderer:(MKShape *)shape
+{
+    // KMLPolygon corresponds to MKPolygonView
+    MKPolygonRenderer *polyView = [[MKPolygonRenderer alloc] initWithPolygon:(MKPolygon *) shape];
+    // MKPolygonViewRend *polyView = [[MKPolygonViewRenderer alloc] initWithPolygon:(MKPolygon *)shape];
+    return polyView;
+}
+
+
 
 @end
 
@@ -800,14 +862,19 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     // KMLLineString corresponds to MKPolyline
     return [MKPolyline polylineWithCoordinates:points count:length];
 }
-
+/*
 - (MKOverlayPathView *)createOverlayView:(MKShape *)shape
 {
     // KMLLineString corresponds to MKPolylineView
     MKPolylineView *lineView = [[MKPolylineView alloc] initWithPolyline:(MKPolyline *)shape];
     return lineView;
 }
+*/
 
+- (MKOverlayPathRenderer *)createOverlayViewRenderer:(MKShape *)shape{
+    MKPolylineRenderer *lineView = [[MKPolylineRenderer alloc] initWithPolyline:(MKPolyline *)shape];
+    return lineView;
+}
 @end
 
 @implementation KMLPlacemark
@@ -932,6 +999,22 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     return nil;
 }
 
+- (MKOverlayRenderer *) overlayrenderer{
+    
+    if (!overlayrenderer) {
+        id <MKOverlay> overlay = [self overlay];
+        if (overlay) {
+            
+            overlayrenderer = [geometry createOverlayViewRenderer: overlay];
+            
+            [style applyToOverlayPathViewRenderer:overlayrenderer];
+        }
+    }
+    return overlayrenderer;
+}
+
+
+/*
 - (MKOverlayView *)overlayView
 {
     if (!overlayView) {
@@ -943,6 +1026,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     }
     return overlayView;
 }
+*/
 
 
 - (MKAnnotationView *)annotationView

@@ -14,6 +14,9 @@
 
 -(void)findKml:(NSString *)species
 {
+    
+    // NSLog(species);
+    
     NSArray *twoNames = [species componentsSeparatedByString:@" "];
     
     NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_shapefile?format=kmz&genus=%@&species=%@",[twoNames objectAtIndex:0],[twoNames objectAtIndex:1]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
@@ -24,8 +27,7 @@
     
     
     NSURLSession *session = [NSURLSession sharedSession];
-    
-    datakml = [NSMutableData data];
+    datakml = [[NSMutableData alloc] init];
     
     NSURLSessionTask *task = [session dataTaskWithRequest:theRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
         if (error){
@@ -44,17 +46,16 @@
         }
         else{
             
+            dispatch_async(dispatch_get_main_queue(),^{
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+           
             [self->datakml appendData:data];
-            dispatch_async(dispatch_get_main_queue(), ^{
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                 
-                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            self->loading = NO;
                 
-                self->loading = NO;
-                
-                [self->delegate kmlFound:self->datakml];
-            });
-            
+            [self->delegate kmlFound:self->datakml];
+             });
         }
     }];
     [task resume];

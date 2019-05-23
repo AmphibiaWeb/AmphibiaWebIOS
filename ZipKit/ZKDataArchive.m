@@ -102,7 +102,7 @@
 		fileType = NSFileTypeRegular;
 	}
 	
-	NSMutableDictionary *attributes = inflatedData == nil ? nil : [NSDictionary dictionaryWithObjectsAndKeys:
+	NSDictionary *attributes = inflatedData == nil ? nil : [NSDictionary dictionaryWithObjectsAndKeys:
 																  [cdHeader posixPermissions], NSFilePosixPermissions,
 																  [cdHeader lastModDate], NSFileCreationDate,
 																  [cdHeader lastModDate], NSFileModificationDate,

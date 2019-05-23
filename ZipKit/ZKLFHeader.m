@@ -105,18 +105,18 @@
 - (NSData *) data {
 	self.extraField = [self zip64ExtraField];
 
-	NSMutableData *data = [NSMutableData zk_dataWithLittleInt32:self.magicNumber];
+	NSMutableData *data = [NSMutableData zk_dataWithLittleInt32:(unsigned int)self.magicNumber];
 	[data zk_appendLittleInt16:self.versionNeededToExtract];
 	[data zk_appendLittleInt16:self.generalPurposeBitFlag];
 	[data zk_appendLittleInt16:self.compressionMethod];
-	[data zk_appendLittleInt32:[self.lastModDate zk_dosDate]];
-	[data zk_appendLittleInt32:self.crc];
+	[data zk_appendLittleInt32:(unsigned int)[self.lastModDate zk_dosDate]];
+	[data zk_appendLittleInt32:(unsigned int)self.crc];
 	if ([self useZip64Extensions]) {
 		[data zk_appendLittleInt32:0xFFFFFFFF];
 		[data zk_appendLittleInt32:0xFFFFFFFF];
 	} else {
-		[data zk_appendLittleInt32:self.compressedSize];
-		[data zk_appendLittleInt32:self.uncompressedSize];
+		[data zk_appendLittleInt32:(unsigned int)self.compressedSize];
+		[data zk_appendLittleInt32:(unsigned int)self.uncompressedSize];
 	}
 	[data zk_appendLittleInt16:self.filenameLength];
 	[data zk_appendLittleInt16:[self.extraField length]];

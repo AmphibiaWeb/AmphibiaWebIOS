@@ -221,10 +221,11 @@
         [alert setDelegate:self];
         [alert show];*/
         
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"No Amphibians Error" message:message preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alertController animated:YES completion:nil];
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"No Amphibians Error" message:message preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertController animated:YES completion:nil];
+        });
     }
     dispatch_async(dispatch_get_main_queue(), ^{[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;});
  // stop showing networkActivityIndicator

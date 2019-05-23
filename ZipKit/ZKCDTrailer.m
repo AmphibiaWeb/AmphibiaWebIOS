@@ -101,7 +101,7 @@
 }
 
 - (NSData *) data {
-	NSMutableData *data = [NSMutableData zk_dataWithLittleInt32:self.magicNumber];
+	NSMutableData *data = [NSMutableData zk_dataWithLittleInt32:(unsigned int)self.magicNumber];
 	[data zk_appendLittleInt16:self.thisDiskNumber];
 	[data zk_appendLittleInt16:self.diskNumberWithStartOfCentralDirectory];
 	[data zk_appendLittleInt16:self.numberOfCentralDirectoryEntriesOnThisDisk];
@@ -110,8 +110,8 @@
 		[data zk_appendLittleInt32:0xFFFFFFFF];
 		[data zk_appendLittleInt32:0xFFFFFFFF];
 	} else {
-		[data zk_appendLittleInt32:self.sizeOfCentralDirectory];
-		[data zk_appendLittleInt32:self.offsetOfStartOfCentralDirectory];
+		[data zk_appendLittleInt32:(unsigned int)self.sizeOfCentralDirectory];
+		[data zk_appendLittleInt32:(unsigned int)self.offsetOfStartOfCentralDirectory];
 	}
 	[data zk_appendLittleInt16:[self.comment zk_precomposedUTF8Length]];
 	[data zk_appendPrecomposedUTF8String:self.comment];

@@ -95,8 +95,7 @@
                  self->region = p.subAdministrativeArea;
                  self->countryName = p.country;
                  
-                 [self sendToDelegate];
-             }
+                 dispatch_async(dispatch_get_main_queue(), ^{[self sendToDelegate];});             }
          }];
     }
     else
@@ -223,14 +222,17 @@
              ^(NSArray* placemarks, NSError* error){
                  if ([placemarks count] > 0)
                  {
-                     CLPlacemark *p = [placemarks objectAtIndex:0];
-                     self->countryCode = p.ISOcountryCode;
-                     ////stateCode = p.administrativeArea;
-                     self->stateCode = [p.administrativeArea stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-                     self->region = p.administrativeArea;
-                     self->countryName = p.country;
-                     
-                     [self sendToDelegate];
+
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         CLPlacemark *p = [placemarks objectAtIndex:0];
+                         self->countryCode = p.ISOcountryCode;
+                         ////stateCode = p.administrativeArea;
+                         self->stateCode = [p.administrativeArea stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+                         self->region = p.administrativeArea;
+                         self->countryName = p.country;
+                      [self sendToDelegate];
+                     });
+
                  }
              }];
         }

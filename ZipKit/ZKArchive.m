@@ -42,7 +42,10 @@
 	NSData *fileHeader = [fileHandle readDataOfLength:4];
 	[fileHandle closeFile];
 	UInt32 headerValue;
-	[fileHeader getBytes:&headerValue];
+    // modified here to fill four bytes to grab a pointer
+    // modified by Chenyu Shi Feb 25 2019
+    [fileHeader getBytes:&headerValue length:sizeof(NSData *)];
+    
 	return (CFSwapInt32LittleToHost(headerValue) == ZKLFHeaderMagicNumber);
 }
 

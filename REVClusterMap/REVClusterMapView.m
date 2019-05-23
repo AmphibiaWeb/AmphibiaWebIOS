@@ -41,8 +41,7 @@
     return self;
 }
 
-
-
+/*
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
     if( [delegate respondsToSelector:@selector(mapView:viewForOverlay:)] )
@@ -51,6 +50,18 @@
     }
     return nil;
 }
+*/
+
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    
+    if( [delegate respondsToSelector:@selector(mapView:rendererForOverlay:)] )
+    {
+        return [delegate mapView:mapView rendererForOverlay:overlay];
+    }
+    return nil;
+}
+
+
     
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -80,7 +91,7 @@
         }
         
         annView.image = [UIImage imageNamed:@"cluster.png"];
-        [(REVClusterAnnotationView*)annView setClusterText:[NSString stringWithFormat:@"%i",[pin nodeCount]]];
+        [(REVClusterAnnotationView*)annView setClusterText:[NSString stringWithFormat:@"%lu",(unsigned long)[pin nodeCount]]];
         [annView setFrame:CGRectMake(annView.frame.origin.x, annView.frame.origin.y, 36, 36)];
         annView.canShowCallout = YES;
     } else {
@@ -199,6 +210,7 @@
 }
 
 // Called after the provided overlay views have been added and positioned in the map.
+/*
 - (void)mapView:(MKMapView *)mapView didAddOverlayViews:(NSArray *)overlayViews
 {
     if( [delegate respondsToSelector:@selector(mapView:didAddOverlayViews:)] )
@@ -206,6 +218,15 @@
         [delegate mapView:mapView didAddOverlayViews:overlayViews];
     }
 }
+*/
+
+- (void)mapView:(MKMapView *)mapView didAddOverlayRenderers:(nonnull NSArray<MKOverlayRenderer *> *)renderers{
+    if( [delegate respondsToSelector:@selector(mapView:didAddOverlayRenderers:)] )
+    {
+        [delegate mapView:mapView didAddOverlayRenderers:renderers];
+    }
+}
+
 
 - (void) mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
@@ -213,7 +234,7 @@
     if( [self mapViewDidZoom] )
     {
         NSMutableArray *points = [[NSMutableArray alloc] initWithArray:[self annotations]];
-        for(int i = [points count] - 1 ; i >= 0 ; i--)
+        for(int i = (unsigned int)[points count] - 1 ; i >= 0 ; i--)
         {
             if([[points objectAtIndex:i] isKindOfClass:[MKUserLocation class]])////
             {

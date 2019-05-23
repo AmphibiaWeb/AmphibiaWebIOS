@@ -51,12 +51,12 @@
 }
 
 - (NSData *) data {
-	NSMutableData *data = [NSMutableData zk_dataWithLittleInt32:self.magicNumber];
+	NSMutableData *data = [NSMutableData zk_dataWithLittleInt32:(unsigned int)self.magicNumber];
 	[data zk_appendLittleInt64:self.sizeOfTrailer];
 	[data zk_appendLittleInt16:self.versionMadeBy];
 	[data zk_appendLittleInt16:self.versionNeededToExtract];
-	[data zk_appendLittleInt32:self.thisDiskNumber];
-	[data zk_appendLittleInt32:self.diskNumberWithStartOfCentralDirectory];
+	[data zk_appendLittleInt32:(unsigned int)self.thisDiskNumber];
+	[data zk_appendLittleInt32:(unsigned int)self.diskNumberWithStartOfCentralDirectory];
 	[data zk_appendLittleInt64:self.numberOfCentralDirectoryEntriesOnThisDisk];
 	[data zk_appendLittleInt64:self.totalNumberOfCentralDirectoryEntries];
 	[data zk_appendLittleInt64:self.sizeOfCentralDirectory];
