@@ -6,7 +6,7 @@
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="10.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -38,11 +38,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r05-Bi-Yqe" customClass="FLAnimatedImageView">
-                                <rect key="frame" x="2" y="6" width="300" height="300"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="r05-Bi-Yqe" customClass="FLAnimatedImageView">
+                                <rect key="frame" x="0.0" y="6" width="375" height="368"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oN1-El-RJ0">
-                                <rect key="frame" x="57" y="371" width="207" height="18"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oN1-El-RJ0">
+                                <rect key="frame" x="75" y="418" width="225" height="30"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Find Amphibia In Your Location">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -51,8 +51,8 @@
                                     <segue destination="aCQ-7A-fWY" kind="push" id="iMy-ea-HDy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJS-wd-H0i">
-                                <rect key="frame" x="42" y="403" width="237" height="18"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJS-wd-H0i">
+                                <rect key="frame" x="59.5" y="463" width="256" height="30"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Find Amphibia At Selected Location">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,8 +61,8 @@
                                     <segue destination="pBc-xR-TMM" kind="push" id="MXT-dO-Ljq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3v-px-RP2">
-                                <rect key="frame" x="54" y="435" width="213" height="18"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3v-px-RP2">
+                                <rect key="frame" x="75" y="508" width="225" height="30"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Search AmphibiaWeb Database">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,8 +71,8 @@
                                     <segue destination="do3-uy-Vdo" kind="push" id="8M2-qy-Z3S"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giL-2I-ocK">
-                                <rect key="frame" x="79" y="467" width="54" height="18"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giL-2I-ocK">
+                                <rect key="frame" x="79" y="553" width="58" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Options">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -81,8 +81,8 @@
                                     <segue destination="QJ3-fD-zqw" kind="push" id="bWw-3D-5It"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="je4-vB-BbA">
-                                <rect key="frame" x="200" y="467" width="41" height="18"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="je4-vB-BbA">
+                                <rect key="frame" x="204" y="553" width="45" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="About">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -91,8 +91,8 @@
                                     <segue destination="vX9-c3-Z4r" kind="push" id="pBf-R8-rXv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Total Described Taxa:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-Tx-xdC">
-                                <rect key="frame" x="82" y="335" width="157" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Described Taxa:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-Tx-xdC">
+                                <rect key="frame" x="105.5" y="382" width="164" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -148,8 +148,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QD3-6M-zNd">
                                 <rect key="frame" x="0.0" y="452.5" width="375" height="150.5"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Map Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qiV-PU-LH0">
-                                        <rect key="frame" x="20" y="31" width="77" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Map Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="qiV-PU-LH0">
+                                        <rect key="frame" x="20" y="31" width="80" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -166,7 +166,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="qiV-PU-LH0" firstAttribute="leading" secondItem="QD3-6M-zNd" secondAttribute="leading" constant="20" symbolic="YES" id="4SS-OX-1wQ"/>
-                                    <constraint firstItem="9A1-N5-VOS" firstAttribute="top" secondItem="qiV-PU-LH0" secondAttribute="bottom" constant="15" id="4rw-dl-2L4"/>
+                                    <constraint firstItem="9A1-N5-VOS" firstAttribute="top" secondItem="qiV-PU-LH0" secondAttribute="bottom" constant="27" id="4rw-dl-2L4"/>
                                     <constraint firstItem="qiV-PU-LH0" firstAttribute="leading" secondItem="9A1-N5-VOS" secondAttribute="leading" id="fvd-oh-EVZ"/>
                                     <constraint firstAttribute="centerX" secondItem="9A1-N5-VOS" secondAttribute="centerX" id="hWb-OC-Ai2"/>
                                     <constraint firstAttribute="centerY" secondItem="9A1-N5-VOS" secondAttribute="centerY" constant="-18" id="zxc-dr-OAd"/>
@@ -175,8 +175,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeP-kc-esJ">
                                 <rect key="frame" x="0.0" y="301.5" width="375" height="151"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Species Locality Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="s3u-l9-lVN">
-                                        <rect key="frame" x="20" y="30" width="163" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Species Locality Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="s3u-l9-lVN">
+                                        <rect key="frame" x="20" y="30" width="170.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -192,7 +192,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="eXg-pj-ftL" firstAttribute="top" secondItem="s3u-l9-lVN" secondAttribute="bottom" constant="17" id="Jvh-0M-pBb"/>
+                                    <constraint firstItem="eXg-pj-ftL" firstAttribute="top" secondItem="s3u-l9-lVN" secondAttribute="bottom" constant="29.5" id="Jvh-0M-pBb"/>
                                     <constraint firstAttribute="centerX" secondItem="eXg-pj-ftL" secondAttribute="centerX" id="LPo-ri-ROh"/>
                                     <constraint firstItem="s3u-l9-lVN" firstAttribute="leading" secondItem="xeP-kc-esJ" secondAttribute="leading" constant="20" symbolic="YES" id="RRr-SP-C3z"/>
                                     <constraint firstAttribute="centerY" secondItem="eXg-pj-ftL" secondAttribute="centerY" constant="-19" id="uwC-Sh-9gk"/>
@@ -202,8 +202,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2O-lc-9gA">
                                 <rect key="frame" x="0.0" y="151" width="375" height="150.5"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Ordinal Classification:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bKc-eG-fQs">
-                                        <rect key="frame" x="20" y="30" width="157" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ordinal Classification:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="bKc-eG-fQs">
+                                        <rect key="frame" x="20" y="30" width="166" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -223,14 +223,14 @@
                                     <constraint firstAttribute="centerY" secondItem="WpM-xA-bUF" secondAttribute="centerY" constant="-19" id="W9b-5n-pAA"/>
                                     <constraint firstAttribute="centerX" secondItem="WpM-xA-bUF" secondAttribute="centerX" id="ZZf-tq-z3v"/>
                                     <constraint firstItem="bKc-eG-fQs" firstAttribute="leading" secondItem="v2O-lc-9gA" secondAttribute="leading" constant="20" symbolic="YES" id="rvf-Yt-Dyh"/>
-                                    <constraint firstItem="WpM-xA-bUF" firstAttribute="top" secondItem="bKc-eG-fQs" secondAttribute="bottom" constant="17" id="tob-7f-2uk"/>
+                                    <constraint firstItem="WpM-xA-bUF" firstAttribute="top" secondItem="bKc-eG-fQs" secondAttribute="bottom" constant="29" id="tob-7f-2uk"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl0-AM-a6p">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Browse Amphibians by:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cei-mU-n3m">
-                                        <rect key="frame" x="20" y="30" width="174" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Browse Amphibians by:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="cei-mU-n3m">
+                                        <rect key="frame" x="20" y="30" width="178.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -247,7 +247,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="q2E-Hc-Z0b" secondAttribute="centerY" constant="-19" id="5Zc-AY-bhh"/>
-                                    <constraint firstItem="q2E-Hc-Z0b" firstAttribute="top" secondItem="cei-mU-n3m" secondAttribute="bottom" constant="17" id="P6Q-Is-oJO"/>
+                                    <constraint firstItem="q2E-Hc-Z0b" firstAttribute="top" secondItem="cei-mU-n3m" secondAttribute="bottom" constant="29.5" id="P6Q-Is-oJO"/>
                                     <constraint firstAttribute="centerX" secondItem="q2E-Hc-Z0b" secondAttribute="centerX" id="b4g-UR-vm2"/>
                                     <constraint firstItem="q2E-Hc-Z0b" firstAttribute="leading" secondItem="cei-mU-n3m" secondAttribute="leading" id="keV-qe-TYT"/>
                                     <constraint firstItem="cei-mU-n3m" firstAttribute="leading" secondItem="wl0-AM-a6p" secondAttribute="leading" constant="20" symbolic="YES" id="wMb-ZX-nNU"/>
@@ -296,33 +296,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVu-qJ-P4f">
-                                <rect key="frame" x="20" y="136" width="335" height="423"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVu-qJ-P4f">
+                                <rect key="frame" x="20" y="107" width="335" height="452"/>
                                 <string key="text">AmphibiaWeb is an online system that provides access to information on amphibian declines, conservation, natural history, and taxonomy. Administered by a coalition of researchers at UC Berkeley, San Francisco State University, University of Florida, and University of Texas at Austin, AmphibiaWeb is an ongoing collaboration between citizen scientists, students and researchers around the world. 
 
 Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Total Described Anura:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fn1-Dd-CNt">
-                                <rect key="frame" x="77" y="20" width="167" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Described Anura:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="Fn1-Dd-CNt">
+                                <rect key="frame" x="77" y="20" width="221" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Total Described Caudata:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="N0w-Ff-R64">
-                                <rect key="frame" x="67" y="49" width="186" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Described Caudata:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="N0w-Ff-R64">
+                                <rect key="frame" x="67" y="49" width="241" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Total Described Gymnophiona:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z9h-fc-8aZ">
-                                <rect key="frame" x="47" y="78" width="226" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Described Gymnophiona:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="Z9h-fc-8aZ">
+                                <rect key="frame" x="47" y="78" width="281" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fk0-Od-8bf">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fk0-Od-8bf">
                                 <rect key="frame" x="0.0" y="559" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Find out more" width="149" id="kkZ-i7-0lG">
@@ -346,10 +346,17 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                             <constraint firstItem="Fk0-Od-8bf" firstAttribute="centerX" secondItem="aVu-qJ-P4f" secondAttribute="centerX" id="DnP-7G-7Wr"/>
                             <constraint firstItem="Fk0-Od-8bf" firstAttribute="top" secondItem="aVu-qJ-P4f" secondAttribute="bottom" id="DwJ-JD-Fd3"/>
                             <constraint firstItem="Fn1-Dd-CNt" firstAttribute="top" secondItem="6uS-Dy-qGD" secondAttribute="top" constant="20" id="J6f-hr-rH5"/>
+                            <constraint firstItem="Fk0-Od-8bf" firstAttribute="bottom" secondItem="9LE-Wf-MZU" secondAttribute="top" id="JhG-4O-b7Z"/>
                             <constraint firstItem="N0w-Ff-R64" firstAttribute="top" secondItem="Fn1-Dd-CNt" secondAttribute="bottom" constant="8" symbolic="YES" id="LB8-ib-HUo"/>
+                            <constraint firstItem="N0w-Ff-R64" firstAttribute="leading" secondItem="6uS-Dy-qGD" secondAttribute="leadingMargin" constant="51" id="RJ7-Ic-O2J"/>
                             <constraint firstItem="Z9h-fc-8aZ" firstAttribute="top" secondItem="N0w-Ff-R64" secondAttribute="bottom" constant="8" symbolic="YES" id="TPW-Wl-ymV"/>
                             <constraint firstItem="N0w-Ff-R64" firstAttribute="centerX" secondItem="Fn1-Dd-CNt" secondAttribute="centerX" id="TRZ-gr-iXa"/>
                             <constraint firstItem="N0w-Ff-R64" firstAttribute="centerX" secondItem="Z9h-fc-8aZ" secondAttribute="centerX" id="UKA-JV-kKc"/>
+                            <constraint firstAttribute="trailing" secondItem="Fk0-Od-8bf" secondAttribute="trailing" id="Uev-Fz-JEz"/>
+                            <constraint firstItem="Z9h-fc-8aZ" firstAttribute="leading" secondItem="6uS-Dy-qGD" secondAttribute="leadingMargin" constant="31" id="qmX-NU-uhU"/>
+                            <constraint firstItem="aVu-qJ-P4f" firstAttribute="leading" secondItem="6uS-Dy-qGD" secondAttribute="leadingMargin" constant="4" id="riJ-fu-Ah0"/>
+                            <constraint firstItem="Fk0-Od-8bf" firstAttribute="leading" secondItem="6uS-Dy-qGD" secondAttribute="leading" id="vgg-Ll-Iz4"/>
+                            <constraint firstItem="Fn1-Dd-CNt" firstAttribute="leading" secondItem="6uS-Dy-qGD" secondAttribute="leadingMargin" constant="61" id="zz4-hW-Gt5"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -376,18 +383,19 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jpD-nG-tDH">
-                                <rect key="frame" x="150" y="93" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jpD-nG-tDH">
+                                <rect key="frame" x="150" y="94" width="150" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="commonNameChanged:" destination="do3-uy-Vdo" eventType="editingDidEndOnExit" id="Sjm-eI-M8h"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7N-NR-QMJ">
-                                <rect key="frame" x="16" y="330" width="150" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7N-NR-QMJ">
+                                <rect key="frame" x="16" y="331" width="150" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="1Re-Ht-7wY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Clear Location">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -396,9 +404,11 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                     <action selector="searchClearLocationButtonPressed:" destination="do3-uy-Vdo" eventType="touchUpInside" id="m1m-Nf-ydn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDl-QX-Pc2">
-                                <rect key="frame" x="225" y="448" width="75" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDl-QX-Pc2">
+                                <rect key="frame" x="225" y="449" width="75" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="ATo-bq-dvK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Search">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -407,30 +417,39 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                     <action selector="searchButtonPressed:" destination="do3-uy-Vdo" eventType="touchUpInside" id="Nnu-g6-eD6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gPp-pK-YrH">
-                                <rect key="frame" x="173" y="262" width="133" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPp-pK-YrH">
+                                <rect key="frame" x="173" y="263" width="133" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="iay-WH-ie2"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Common Name:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gMh-Tv-wDj">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Common Name:" textAlignment="right" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMh-Tv-wDj">
                                 <rect key="frame" x="20" y="98" width="128" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bFe-YT-qPg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Scientific Name:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DTX-Qy-b3b">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scientific Name:" textAlignment="right" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTX-Qy-b3b">
                                 <rect key="frame" x="20" y="49" width="128" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="Cqq-F7-6XT"/>
+                                    <constraint firstAttribute="height" constant="21" id="X6H-Nz-eMA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq6-EU-tL7">
-                                <rect key="frame" x="15" y="262" width="150" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq6-EU-tL7">
+                                <rect key="frame" x="15" y="263" width="150" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Tcv-RG-gzQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Choose Location">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -440,34 +459,36 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                     <segue destination="pBc-xR-TMM" kind="push" identifier="searchToMap" id="kdm-gk-MUf"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="MDv-HT-qwU">
-                                <rect key="frame" x="150" y="142" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="MDv-HT-qwU">
+                                <rect key="frame" x="150" y="142" width="150" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="familyNameChanged:" destination="do3-uy-Vdo" eventType="editingDidEndOnExit" id="wyK-ZB-yhm"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="dyw-Tf-BRm">
-                                <rect key="frame" x="150" y="44" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="dyw-Tf-BRm">
+                                <rect key="frame" x="150" y="44" width="150" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="scientificNameChanged:" destination="do3-uy-Vdo" eventType="editingDidEndOnExit" id="N9I-Bm-HeY"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Family:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="OUv-fo-Iek">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Family:" textAlignment="right" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUv-fo-Iek">
                                 <rect key="frame" x="20" y="147" width="128" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9Ln-GS-gra"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emE-oE-pQf">
-                                <rect key="frame" x="20" y="448" width="102" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emE-oE-pQf">
+                                <rect key="frame" x="20" y="449" width="102" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="cSV-Oc-pFz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Clear Page">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -479,6 +500,43 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gMh-Tv-wDj" firstAttribute="top" secondItem="DTX-Qy-b3b" secondAttribute="bottom" constant="28" id="1mE-oG-yCw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gPp-pK-YrH" secondAttribute="trailing" constant="53" id="3BH-PC-CUZ"/>
+                            <constraint firstItem="X7N-NR-QMJ" firstAttribute="leading" secondItem="Bfz-wJ-yTb" secondAttribute="leadingMargin" id="B8q-Bc-XAF"/>
+                            <constraint firstItem="Lq6-EU-tL7" firstAttribute="leading" secondItem="Bfz-wJ-yTb" secondAttribute="leadingMargin" constant="-1" id="Ctk-KW-rEL"/>
+                            <constraint firstItem="Lq6-EU-tL7" firstAttribute="top" secondItem="gPp-pK-YrH" secondAttribute="top" id="G6H-Yl-qSk"/>
+                            <constraint firstItem="MDv-HT-qwU" firstAttribute="top" secondItem="jpD-nG-tDH" secondAttribute="bottom" constant="19" id="Ke3-bJ-cow"/>
+                            <constraint firstItem="Lq6-EU-tL7" firstAttribute="top" secondItem="MDv-HT-qwU" secondAttribute="bottom" constant="90" id="MTX-1m-S5I"/>
+                            <constraint firstItem="OUv-fo-Iek" firstAttribute="top" secondItem="gMh-Tv-wDj" secondAttribute="bottom" constant="28" id="OFw-cI-LfY"/>
+                            <constraint firstItem="DTX-Qy-b3b" firstAttribute="centerY" secondItem="dyw-Tf-BRm" secondAttribute="centerY" id="TaG-0s-L5h"/>
+                            <constraint firstItem="X7N-NR-QMJ" firstAttribute="top" secondItem="Lq6-EU-tL7" secondAttribute="bottom" constant="33" id="VBF-wm-7Pm"/>
+                            <constraint firstItem="gPp-pK-YrH" firstAttribute="leading" secondItem="Lq6-EU-tL7" secondAttribute="trailing" constant="8" symbolic="YES" id="WMY-OH-V6F"/>
+                            <constraint firstItem="OUv-fo-Iek" firstAttribute="centerY" secondItem="MDv-HT-qwU" secondAttribute="centerY" id="Xcm-zY-Ug4"/>
+                            <constraint firstItem="SDl-QX-Pc2" firstAttribute="top" secondItem="gPp-pK-YrH" secondAttribute="bottom" constant="82" id="Xlk-Bo-Uai"/>
+                            <constraint firstItem="DTX-Qy-b3b" firstAttribute="trailing" secondItem="gMh-Tv-wDj" secondAttribute="trailing" id="XvB-wr-Eyl"/>
+                            <constraint firstItem="dyw-Tf-BRm" firstAttribute="trailing" secondItem="jpD-nG-tDH" secondAttribute="trailing" id="aXS-Bg-Q3a"/>
+                            <constraint firstItem="dyw-Tf-BRm" firstAttribute="leading" secondItem="jpD-nG-tDH" secondAttribute="leading" id="e36-Vu-9f3"/>
+                            <constraint firstItem="dyw-Tf-BRm" firstAttribute="top" secondItem="uZ4-ZB-JA2" secondAttribute="bottom" constant="44" id="fpY-ob-gjz"/>
+                            <constraint firstItem="jpD-nG-tDH" firstAttribute="top" secondItem="dyw-Tf-BRm" secondAttribute="bottom" constant="19" id="g6z-dp-2Ib"/>
+                            <constraint firstItem="jpD-nG-tDH" firstAttribute="leading" secondItem="MDv-HT-qwU" secondAttribute="leading" id="h8a-gI-9nI"/>
+                            <constraint firstItem="gPp-pK-YrH" firstAttribute="leading" secondItem="X7N-NR-QMJ" secondAttribute="trailing" constant="7" id="iPB-FC-ViK"/>
+                            <constraint firstItem="OUv-fo-Iek" firstAttribute="leading" secondItem="emE-oE-pQf" secondAttribute="leading" id="iqh-oT-yR7"/>
+                            <constraint firstItem="DTX-Qy-b3b" firstAttribute="top" secondItem="uZ4-ZB-JA2" secondAttribute="bottom" constant="49" id="kyi-fR-DhN"/>
+                            <constraint firstItem="gMh-Tv-wDj" firstAttribute="leading" secondItem="OUv-fo-Iek" secondAttribute="leading" id="lXz-9l-fQI"/>
+                            <constraint firstItem="jpD-nG-tDH" firstAttribute="trailing" secondItem="MDv-HT-qwU" secondAttribute="trailing" id="lc5-FS-4ua"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dyw-Tf-BRm" secondAttribute="trailing" constant="59" id="mKb-CO-0uB"/>
+                            <constraint firstItem="emE-oE-pQf" firstAttribute="baseline" secondItem="SDl-QX-Pc2" secondAttribute="firstBaseline" id="p2a-ui-fnu"/>
+                            <constraint firstItem="dyw-Tf-BRm" firstAttribute="leading" secondItem="DTX-Qy-b3b" secondAttribute="trailing" constant="2" id="pbn-sD-PI9"/>
+                            <constraint firstItem="gMh-Tv-wDj" firstAttribute="centerY" secondItem="jpD-nG-tDH" secondAttribute="centerY" id="pl7-7V-XTt"/>
+                            <constraint firstItem="DTX-Qy-b3b" firstAttribute="leading" secondItem="gMh-Tv-wDj" secondAttribute="leading" id="r4N-6S-p5h"/>
+                            <constraint firstItem="MDv-HT-qwU" firstAttribute="trailing" secondItem="SDl-QX-Pc2" secondAttribute="trailing" id="t2R-cJ-t0r"/>
+                            <constraint firstItem="DTX-Qy-b3b" firstAttribute="leading" secondItem="Bfz-wJ-yTb" secondAttribute="leadingMargin" constant="4" id="th8-7S-dlz"/>
+                            <constraint firstItem="emE-oE-pQf" firstAttribute="top" secondItem="SDl-QX-Pc2" secondAttribute="top" id="vfp-fn-Vxq"/>
+                            <constraint firstItem="emE-oE-pQf" firstAttribute="top" secondItem="X7N-NR-QMJ" secondAttribute="bottom" constant="81" id="xnH-gC-RSN"/>
+                            <constraint firstItem="ors-W4-pFq" firstAttribute="top" secondItem="emE-oE-pQf" secondAttribute="bottom" constant="118" id="zLJ-vY-Q8H"/>
+                            <constraint firstItem="gMh-Tv-wDj" firstAttribute="trailing" secondItem="OUv-fo-Iek" secondAttribute="trailing" id="zwa-KA-Mr9"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Search Database" id="MkF-2S-EGr"/>
@@ -618,14 +676,14 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description:" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-Vy-21C">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description:" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-Vy-21C">
                                 <rect key="frame" x="10" y="283.5" width="90" height="20"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esX-JQ-1yD">
-                                <rect key="frame" x="281" y="197" width="39" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esX-JQ-1yD">
+                                <rect key="frame" x="336" y="246.5" width="39" height="39"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" image="sound.gif">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -637,7 +695,7 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                     <action selector="soundPressed:" destination="9vb-3V-NG1" eventType="touchUpInside" id="JOp-TH-Wz4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Common Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-XP-6fF">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Common Name" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-XP-6fF">
                                 <rect key="frame" x="-1" y="246.5" width="329" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -675,9 +733,8 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="247.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGL-CG-ZS9">
-                                <rect key="frame" x="122" y="278" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGL-CG-ZS9">
+                                <rect key="frame" x="122" y="277.5" width="109" height="30"/>
                                 <state key="normal" title="View in Browser"/>
                                 <connections>
                                     <action selector="ToBrowser:" destination="9vb-3V-NG1" eventType="touchUpInside" id="Aq1-yD-yGm"/>
@@ -688,8 +745,10 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                         <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7FQ-zm-ZWx" firstAttribute="leading" secondItem="c8f-Vy-21C" secondAttribute="leading" id="1Ec-WX-YF7"/>
+                            <constraint firstItem="cGL-CG-ZS9" firstAttribute="leading" secondItem="c8f-Vy-21C" secondAttribute="trailing" constant="22" id="3kx-1R-V1x"/>
                             <constraint firstItem="c8f-Vy-21C" firstAttribute="leading" secondItem="Hhu-ia-Kww" secondAttribute="leading" constant="10" id="4lq-Vc-k7Q"/>
                             <constraint firstItem="7FQ-zm-ZWx" firstAttribute="centerX" secondItem="aua-ev-0EY" secondAttribute="centerX" id="68W-Pa-oUD"/>
+                            <constraint firstItem="cGL-CG-ZS9" firstAttribute="top" secondItem="Bvy-XP-6fF" secondAttribute="bottom" constant="2" id="83q-3o-uak"/>
                             <constraint firstItem="7FQ-zm-ZWx" firstAttribute="top" secondItem="c8f-Vy-21C" secondAttribute="bottom" constant="8" symbolic="YES" id="9gC-ol-lzC"/>
                             <constraint firstItem="Bvy-XP-6fF" firstAttribute="leading" secondItem="Hhu-ia-Kww" secondAttribute="leading" constant="-1" id="9lw-Rc-EXz"/>
                             <constraint firstItem="BIh-el-Qen" firstAttribute="leading" secondItem="Bvy-XP-6fF" secondAttribute="trailing" constant="9" id="Etq-zf-3NV"/>
@@ -743,15 +802,15 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" ambiguous="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-y2-PqW">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-y2-PqW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="sGG-3G-yGC" id="2Ny-8D-9FW"/>
                                 </connections>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="98K-RJ-WGx">
-                                <rect key="frame" x="0.0" y="561" width="375" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98K-RJ-WGx">
+                                <rect key="frame" x="0.0" y="561" width="375" height="42"/>
                                 <items>
                                     <barButtonItem enabled="NO" systemItem="rewind" id="KTW-AP-WgQ">
                                         <connections>
@@ -771,8 +830,10 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="98K-RJ-WGx" firstAttribute="height" secondItem="2ba-Kj-7ob" secondAttribute="height" multiplier="0.07" id="BLs-02-Les"/>
+                            <constraint firstItem="98K-RJ-WGx" firstAttribute="leading" secondItem="ghL-y2-PqW" secondAttribute="leading" id="W87-B0-gd1"/>
                             <constraint firstItem="ghL-y2-PqW" firstAttribute="top" secondItem="iKv-EM-6Vq" secondAttribute="bottom" id="Xym-kG-Jb1"/>
                             <constraint firstItem="ghL-y2-PqW" firstAttribute="height" secondItem="2ba-Kj-7ob" secondAttribute="height" multiplier="0.93" id="cE4-LG-rC8"/>
+                            <constraint firstItem="98K-RJ-WGx" firstAttribute="leading" secondItem="2ba-Kj-7ob" secondAttribute="leading" id="fTU-ca-FME"/>
                             <constraint firstItem="ghL-y2-PqW" firstAttribute="centerY" secondItem="2ba-Kj-7ob" secondAttribute="centerY" id="fc4-MD-eqY"/>
                             <constraint firstItem="ghL-y2-PqW" firstAttribute="width" secondItem="2ba-Kj-7ob" secondAttribute="width" id="iE6-7Z-RFG"/>
                             <constraint firstItem="98K-RJ-WGx" firstAttribute="width" secondItem="2ba-Kj-7ob" secondAttribute="width" id="ieo-eE-trN"/>
@@ -804,24 +865,27 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZhP-fa-VyF">
-                                <rect key="frame" x="142" y="190" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZhP-fa-VyF">
+                                <rect key="frame" x="141.5" y="190" width="37" height="37"/>
                             </activityIndicatorView>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPM-K9-ELn">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPM-K9-ELn">
                                 <rect key="frame" x="0.0" y="176" width="320" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Map Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="mrN-hG-RHh">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Map Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="mrN-hG-RHh">
                                         <rect key="frame" x="20" y="91" width="166" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="166" id="JcH-ZP-V7P"/>
+                                            <constraint firstAttribute="height" constant="21" id="xvG-gf-7A1"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HaA-rX-ozU">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HaA-rX-ozU">
                                         <rect key="frame" x="20" y="130" width="280" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="0iu-5y-KAd"/>
+                                        </constraints>
                                         <segments>
                                             <segment title="Standard"/>
                                             <segment title="Hybrid"/>
@@ -831,16 +895,20 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                             <action selector="mapChanged:" destination="h65-Pi-IAg" eventType="valueChanged" id="MBK-3L-bKA"/>
                                         </connections>
                                     </segmentedControl>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Species Locality Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pm7-dR-vOT">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Species Locality Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="Pm7-dR-vOT">
                                         <rect key="frame" x="20" y="9" width="171" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="jsq-cT-sRp"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="crZ-3s-KFl">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="crZ-3s-KFl">
                                         <rect key="frame" x="20" y="47" width="280" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="3hy-vP-6ok"/>
+                                        </constraints>
                                         <segments>
                                             <segment title="Area"/>
                                             <segment title="Both"/>
@@ -850,9 +918,8 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                             <action selector="pointChanged:" destination="h65-Pi-IAg" eventType="valueChanged" id="rRw-Ty-ecX"/>
                                         </connections>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsb-Mg-kza">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsb-Mg-kza">
                                         <rect key="frame" x="20" y="188" width="280" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Close">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -863,9 +930,33 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.51000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="HaA-rX-ozU" firstAttribute="trailing" secondItem="nsb-Mg-kza" secondAttribute="trailing" id="9Pg-j3-Ug6"/>
+                                    <constraint firstItem="HaA-rX-ozU" firstAttribute="top" secondItem="mrN-hG-RHh" secondAttribute="bottom" constant="18" id="DLA-CS-wMG"/>
+                                    <constraint firstItem="crZ-3s-KFl" firstAttribute="leading" secondItem="mrN-hG-RHh" secondAttribute="leading" id="JX1-Sg-b7a"/>
+                                    <constraint firstItem="nsb-Mg-kza" firstAttribute="bottom" secondItem="bPM-K9-ELn" secondAttribute="bottomMargin" id="Pnc-ap-oDg"/>
+                                    <constraint firstItem="mrN-hG-RHh" firstAttribute="top" secondItem="crZ-3s-KFl" secondAttribute="bottom" constant="16" id="QoD-Pv-s0z"/>
+                                    <constraint firstItem="crZ-3s-KFl" firstAttribute="centerX" secondItem="bPM-K9-ELn" secondAttribute="centerX" id="YM9-sg-y8L"/>
+                                    <constraint firstItem="crZ-3s-KFl" firstAttribute="trailing" secondItem="HaA-rX-ozU" secondAttribute="trailing" id="dBt-qP-6SX"/>
+                                    <constraint firstItem="mrN-hG-RHh" firstAttribute="leading" secondItem="HaA-rX-ozU" secondAttribute="leading" id="gr2-rs-0G9"/>
+                                    <constraint firstItem="nsb-Mg-kza" firstAttribute="top" secondItem="HaA-rX-ozU" secondAttribute="bottom" constant="30" id="hl2-4T-I0g"/>
+                                    <constraint firstItem="Pm7-dR-vOT" firstAttribute="leading" secondItem="crZ-3s-KFl" secondAttribute="leading" id="iiT-N6-Ac5"/>
+                                    <constraint firstItem="Pm7-dR-vOT" firstAttribute="top" secondItem="bPM-K9-ELn" secondAttribute="top" constant="9" id="jAF-RF-oa8"/>
+                                    <constraint firstItem="Pm7-dR-vOT" firstAttribute="leading" secondItem="bPM-K9-ELn" secondAttribute="leading" constant="20" id="kP1-C4-8TO"/>
+                                    <constraint firstItem="HaA-rX-ozU" firstAttribute="leading" secondItem="nsb-Mg-kza" secondAttribute="leading" id="vkq-2w-Tpx"/>
+                                    <constraint firstItem="crZ-3s-KFl" firstAttribute="top" secondItem="Pm7-dR-vOT" secondAttribute="bottom" constant="17" id="vlV-To-KDI"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="bPM-K9-ELn" secondAttribute="trailing" constant="39" id="2Gc-gX-clF"/>
+                            <constraint firstItem="bPM-K9-ELn" firstAttribute="top" secondItem="oi2-iD-NEM" secondAttribute="bottom" constant="176" id="7ZG-A9-Oc0"/>
+                            <constraint firstItem="GNd-kz-TnW" firstAttribute="top" secondItem="bPM-K9-ELn" secondAttribute="bottom" constant="187" id="Dpd-Mi-vDg"/>
+                            <constraint firstItem="bPM-K9-ELn" firstAttribute="centerX" secondItem="ZhP-fa-VyF" secondAttribute="centerX" id="Gx2-S5-1b1"/>
+                            <constraint firstItem="ZhP-fa-VyF" firstAttribute="top" secondItem="oi2-iD-NEM" secondAttribute="bottom" constant="190" id="Yyx-uO-Amp"/>
+                            <constraint firstItem="bPM-K9-ELn" firstAttribute="leading" secondItem="528-d2-2Da" secondAttribute="leading" id="mOf-qg-H7d"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="1wn-u4-Y3b">

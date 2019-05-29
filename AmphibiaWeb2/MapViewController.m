@@ -43,7 +43,7 @@
         [map setRotateEnabled:NO];
     }
     
-#warning TODO Pitch?
+// #warning TODO Pitch?
     
     [self.view addSubview:map];
     [self.view sendSubviewToBack:map];

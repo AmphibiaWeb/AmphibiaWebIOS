@@ -44,9 +44,11 @@
         }
         else{
             
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-            [self->dataXml appendData:data];
+
             dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+                [self->dataXml appendData:data];
                 
                 [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                 
