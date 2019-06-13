@@ -427,7 +427,7 @@
     
     MKOverlayRenderer *view = [kml rendererForOverlay:overlay];
     
-    [(MKPolygonRenderer *)view setFillColor:[UIColor redColor]];
+    [(MKPolygonRenderer *)view setFillColor:[[UIColor greenColor] colorWithAlphaComponent:0.4]];
     
     return view;
 }
