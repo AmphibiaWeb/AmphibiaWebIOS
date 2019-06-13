@@ -199,22 +199,6 @@
       "filename" : "Default2048x1536.png",
       "extent" : "full-screen",
       "scale" : "2x"
-    },
-    {
-      "orientation" : "portrait",
-      "idiom" : "ipad",
-      "filename" : "Default-Portrait~ipad.png",
-      "extent" : "to-status-bar",
-      "unassigned" : true,
-      "scale" : "1x"
-    },
-    {
-      "orientation" : "portrait",
-      "idiom" : "ipad",
-      "filename" : "Default-Portrait@2x~ipad.png",
-      "extent" : "to-status-bar",
-      "unassigned" : true,
-      "scale" : "2x"
     }
   ],
   "info" : {

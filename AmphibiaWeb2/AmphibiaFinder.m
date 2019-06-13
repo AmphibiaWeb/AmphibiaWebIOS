@@ -37,6 +37,7 @@
         url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"https://amphibiaweb.org/cgi/amphib_ws_locality?where-isocc=%@&rel-isocc=like", countrycode]];
     }
     
+    NSLog(@"%@", [url absoluteString]);
     
     
     NSURLRequest *theRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];

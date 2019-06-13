@@ -1146,7 +1146,7 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                     <rect key="frame" x="0.0" y="0.0" width="154" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="uIZ-Fa-Rel">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontsize="1" translatesAutoresizingMaskIntoConstraints="NO" id="uIZ-Fa-Rel">
                                             <rect key="frame" x="8" y="105" width="138" height="19"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="n5u-bx-xSu"/>
@@ -1294,7 +1294,7 @@ Range maps are from AmphibiaWeb and the IUCN Global Amphibian Assessment.</strin
                                     <rect key="frame" x="0.0" y="0.0" width="154" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="FpA-kz-flU">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontsize="1" translatesAutoresizingMaskIntoConstraints="NO" id="FpA-kz-flU">
                                             <rect key="frame" x="55" y="106" width="44" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="aft-NU-fEJ"/>
