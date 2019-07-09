@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4B529882222A07AC002DDEAD /* AWlogoanimated300_loop.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B529881222A07AB002DDEAD /* AWlogoanimated300_loop.gif */; };
-		4B5298842232E746002DDEAD /* logoframes in Resources */ = {isa = PBXBuildFile; fileRef = 4B5298832232E745002DDEAD /* logoframes */; };
 		4B52988A2232EBF6002DDEAD /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5298862232EBF6002DDEAD /* FLAnimatedImageView.m */; };
 		4B52988B2232EBF6002DDEAD /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5298872232EBF6002DDEAD /* FLAnimatedImage.m */; };
 		4B9A167C2232F8A600744EF7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9A167B2232F8A600744EF7 /* QuartzCore.framework */; };
@@ -158,7 +157,6 @@
 
 /* Begin PBXFileReference section */
 		4B529881222A07AB002DDEAD /* AWlogoanimated300_loop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AWlogoanimated300_loop.gif; sourceTree = SOURCE_ROOT; };
-		4B5298832232E745002DDEAD /* logoframes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = logoframes; sourceTree = "<group>"; };
 		4B5298862232EBF6002DDEAD /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImageView.m; path = "FLAnimatedImage-master/FLAnimatedImage/FLAnimatedImageView.m"; sourceTree = SOURCE_ROOT; };
 		4B5298872232EBF6002DDEAD /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImage.m; path = "FLAnimatedImage-master/FLAnimatedImage/FLAnimatedImage.m"; sourceTree = SOURCE_ROOT; };
 		4B5298882232EBF6002DDEAD /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImage.h; path = "FLAnimatedImage-master/FLAnimatedImage/FLAnimatedImage.h"; sourceTree = SOURCE_ROOT; };
@@ -406,7 +404,6 @@
 				CE34720216460084002EE0C4 /* AppDelegate.h */,
 				CE34720316460084002EE0C4 /* AppDelegate.m */,
 				CE34720B16460084002EE0C4 /* MainStoryboard.storyboard */,
-				4B5298832232E745002DDEAD /* logoframes */,
 				4B529881222A07AB002DDEAD /* AWlogoanimated300_loop.gif */,
 				CE9F4B2C1649F2F40009D3BD /* Storyboard4inch.storyboard */,
 				CEF9A46B164C3D4300232AE7 /* StoryboardIpad.storyboard */,
@@ -686,7 +683,6 @@
 				CE909530176A409B00489D65 /* Ascaphus_truei.kml in Resources */,
 				CE34733E164608A0002EE0C4 /* ZipKitFW-Info.plist in Resources */,
 				CE34739B16461208002EE0C4 /* amphibiaweb.jpg in Resources */,
-				4B5298842232E746002DDEAD /* logoframes in Resources */,
 				CE34739D16461208002EE0C4 /* cluster.png in Resources */,
 				CE34739F16461208002EE0C4 /* greenPin.png in Resources */,
 				CE3473A116461208002EE0C4 /* image.png in Resources */,
